@@ -1,5 +1,7 @@
 # Tessera — CSF 2.0 outcome-evidence mapper
 
+[Open the public educational demo](https://dln-tessera.vercel.app). State is browser-local and resets on refresh; use synthetic inputs only.
+
 **Educational prototype. Synthetic data only. Not a certification, attestation, audit opinion or legal/compliance conclusion.**
 
 Tessera answers one question for a small security team: *which of our target outcomes are actually evidenced right now, and why not?* It maps evidence artifacts to a 25-subcategory educational subset of the **NIST Cybersecurity Framework (CSF) 2.0** (NIST CSWP 29, February 26, 2024), scores evidence freshness, detects contradictory evidence, records reviewer decisions with guardrails, and produces a ranked gap register that can be exported as JSON or CSV.
