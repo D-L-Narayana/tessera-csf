@@ -1,0 +1,87 @@
+ ✓ tests/engine.test.ts > catalog > contains exactly 25 unique CSF 2.0 subcategories across all six functions 3ms
+ × tests/engine.test.ts > freshness > is fresh within validDays, aging up to 1.5x, stale beyond 7ms
+ × tests/engine.test.ts > freshness > treats the exact validDays boundary as fresh and one day over as aging 1ms
+ × tests/engine.test.ts > freshness > flags evidence dated in the future as stale with a negative age 0ms
+ × tests/engine.test.ts > subcategory evaluation > reports none when there is no evidence 0ms
+ × tests/engine.test.ts > subcategory evaluation > requires two distinct evidence types for sufficiency even when coverage is high 0ms
+ × tests/engine.test.ts > subcategory evaluation > is sufficient with coverage >= 1 from two types 0ms
+ × tests/engine.test.ts > subcategory evaluation > gives stale evidence zero weight and aging evidence half weight 1ms
+ × tests/engine.test.ts > subcategory evaluation > is contradicted when current evidence both supports and refutes 0ms
+ × tests/engine.test.ts > subcategory evaluation > is refuted when the only current evidence refutes the outcome 0ms
+ × tests/engine.test.ts > subcategory evaluation > ignores a stale refutation when deciding contradiction 0ms
+ × tests/engine.test.ts > subcategory evaluation > ignores evidence that does not reference the subcategory 0ms
+ × tests/engine.test.ts > reviewer overlay > marks an accepted-but-weak result as an override that needs a substantive rationale 0ms
+ × tests/engine.test.ts > reviewer overlay > applies a valid override and keeps the trace 0ms
+ × tests/engine.test.ts > reviewer overlay > never lets a reviewer accept a contradicted outcome 0ms
+ × tests/engine.test.ts > reviewer overlay > respects a not-applicable verdict and zeroes residual 0ms
+ × tests/engine.test.ts > reviewer overlay > a gap verdict forces the status down even if evidence looks sufficient 0ms
+ × tests/engine.test.ts > residual risk > scales exposure by priority and status 0ms
+ × tests/engine.test.ts > residual risk > bands residual into low (<0.75), moderate (<1.75), high (>=1.75) 2ms
+ × tests/engine.test.ts > pack evaluation and report > evaluates every catalog subcategory exactly once and rolls up per function 0ms
+ × tests/engine.test.ts > pack evaluation and report > orders gaps by residual descending and excludes sufficient and n/a outcomes 0ms
+ × tests/engine.test.ts > pack evaluation and report > is deterministic: same pack produces byte-identical report JSON 0ms
+ × tests/engine.test.ts > pack evaluation and report > labels the framework version and the subset honestly in the report 0ms
+ × tests/engine.test.ts > CSV export > neutralises spreadsheet formula injection and quotes fields 0ms
+ × tests/engine.test.ts > pack validation > accepts a well-formed pack 0ms
+ × tests/engine.test.ts > pack validation > rejects malformed JSON without throwing 0ms
+ × tests/engine.test.ts > pack validation > rejects oversized input before parsing 0ms
+ × tests/engine.test.ts > pack validation > rejects unknown subcategory ids and bad dates with paths 0ms
+ × tests/engine.test.ts > pack validation > rejects validDays outside 1..3650, duplicate ids and wrong schema tag 0ms
+ × tests/engine.test.ts > pack validation > rejects more than 500 evidence items 1ms
+ × tests/engine.test.ts > pack validation > rejects a decision rationale over 2000 characters and strips unknown keys 0ms
+⎯⎯⎯⎯⎯⎯ Failed Tests 30 ⎯⎯⎯⎯⎯⎯⎯
+ Test Files  1 failed (1)
+      Tests  30 failed | 1 passed (31)
+ × tests/engine.test.ts > pack validation — parent review regressions > measures the size limit in UTF-8 bytes, not UTF-16 code units 7ms
+   → expected 'file is not valid JSON' to match /too large/i
+ × tests/engine.test.ts > pack validation — parent review regressions > rejects evidence that references more than 25 subcategories instead of truncating 2ms
+   → expected true to be false // Object.is equality
+ × tests/engine.test.ts > pack validation — parent review regressions > rejects more than 25 priority entries instead of truncating 1ms
+   → expected false to be true // Object.is equality
+ × tests/engine.test.ts > pack validation — parent review regressions > deduplicates repeated subcategory ids within one evidence item 2ms
+   → expected [ 'PR.AA-05', 'PR.AA-05' ] to deeply equal [ 'PR.AA-05' ]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+AssertionError: expected 'file is not valid JSON' to match /too large/i
+AssertionError: expected true to be false // Object.is equality
+AssertionError: expected false to be true // Object.is equality
+AssertionError: expected [ 'PR.AA-05', 'PR.AA-05' ] to deeply equal [ 'PR.AA-05' ]
+      Tests  4 failed | 31 passed (35)
+ × tests/engine.test.ts > not-applicable guardrails — parent review regressions > rejects a not-applicable verdict whose rationale is not substantive and keeps the computed status 10ms
+   → expected 'not-applicable' to be 'weak' // Object.is equality
+ × tests/engine.test.ts > not-applicable guardrails — parent review regressions > never lets not-applicable hide a contradiction or refutation 1ms
+   → expected 'not-applicable' to be 'contradicted' // Object.is equality
+ × tests/engine.test.ts > not-applicable guardrails — parent review regressions > accepts a substantive not-applicable scope rationale and records it as a scoping decision 2ms
+   → expected undefined to deeply equal []
+ × tests/engine.test.ts > not-applicable guardrails — parent review regressions > rolls up an all-not-applicable function as not-assessed rather than low risk 1ms
+   → expected undefined to be +0 // Object.is equality
+ × tests/engine.test.ts > not-applicable guardrails — parent review regressions > labels residual scoring as a custom educational heuristic in the report 2ms
+ × tests/engine.test.ts > CSV export — leading whitespace formula cases > neutralises formulas hidden behind leading spaces, tabs or carriage returns 2ms
+   → expected false to be true // Object.is equality
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+AssertionError: expected 'not-applicable' to be 'weak' // Object.is equality
+AssertionError: expected 'not-applicable' to be 'contradicted' // Object.is equality
+AssertionError: expected undefined to deeply equal []
+AssertionError: expected undefined to be +0 // Object.is equality
+TypeError: .toMatch() expects to receive a string, but got undefined
+AssertionError: expected false to be true // Object.is equality
+      Tests  6 failed | 35 passed (41)
+ × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > --ink-3 on --paper ≥ 4.5 3ms
+ × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > --ink-3 on --ground ≥ 4.5 1ms
+ × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > --pr on --ground ≥ 4.5 1ms
+ × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > --de-text on --paper ≥ 4.5 0ms
+ × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > --de-text on --ground ≥ 4.5 1ms
+ × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > --rc on --ground ≥ 4.5 0ms
+ × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > --good on --ground ≥ 4.5 0ms
+ × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > --warn-text on --paper ≥ 4.5 0ms
+ × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > --warn-text on --ground ≥ 4.5 0ms
+ × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > text-role rules use the text-safe warn/ochre tokens, not the tile fill token 4ms
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+      Tests  10 failed | 18 passed (28)
+ × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > an accepted override with zero current evidence becomes accepted-risk, not sufficient, and stays in the gap register 8ms
+ × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > a stale accepted decision (older than the decision validity window) is ignored with a warning 1ms
+ × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > decision freshness boundary: exactly DECISION_VALID_DAYS old still applies; one day older does not 1ms
+ × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > a decision dated after the evaluation date is treated as stale (data-entry error), not as fresh 1ms
+ × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > a stale gap verdict is also ignored (decisions age symmetrically) 1ms
+ × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > accepted-risk has a documented exposure and residual band and appears in the report scoring note 1ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+      Tests  6 failed | 42 passed (48)

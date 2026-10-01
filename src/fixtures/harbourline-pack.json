@@ -1,0 +1,370 @@
+{
+  "schema": "tessera.pack/1",
+  "profile": {
+    "name": "Harbourline Logistics (synthetic demo profile)",
+    "asOf": "2026-10-01",
+    "priorities": {
+      "PR.AA-05": 3,
+      "PR.DS-11": 3,
+      "DE.CM-01": 3,
+      "PR.PS-02": 3,
+      "ID.RA-01": 3,
+      "GV.PO-01": 2,
+      "GV.OC-03": 2,
+      "ID.AM-01": 2,
+      "ID.AM-02": 2,
+      "GV.SC-07": 2,
+      "RS.MA-01": 2,
+      "PR.AT-01": 1,
+      "RC.CO-03": 1,
+      "GV.RM-02": 1
+    }
+  },
+  "evidence": [
+    {
+      "id": "EV-001",
+      "title": "Access control policy v4 (approved)",
+      "type": "policy",
+      "subcategoryIds": [
+        "PR.AA-05",
+        "PR.AA-01"
+      ],
+      "collectedOn": "2026-08-14",
+      "validDays": 365,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "grc.example",
+      "note": "Signed by CIO 2026-08-10; covers least privilege and SoD."
+    },
+    {
+      "id": "EV-002",
+      "title": "Q2 access recertification report (finance apps)",
+      "type": "report",
+      "subcategoryIds": [
+        "PR.AA-05"
+      ],
+      "collectedOn": "2026-05-20",
+      "validDays": 90,
+      "scope": "partial",
+      "assertion": "supports",
+      "source": "idp.example",
+      "note": "Only finance applications were in scope for this cycle."
+    },
+    {
+      "id": "EV-003",
+      "title": "IdP MFA enforcement export",
+      "type": "configuration",
+      "subcategoryIds": [
+        "PR.AA-01"
+      ],
+      "collectedOn": "2026-09-22",
+      "validDays": 90,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "idp.example"
+    },
+    {
+      "id": "EV-004",
+      "title": "Backup job configuration (nightly, encrypted)",
+      "type": "configuration",
+      "subcategoryIds": [
+        "PR.DS-11"
+      ],
+      "collectedOn": "2026-09-15",
+      "validDays": 90,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "backup.example"
+    },
+    {
+      "id": "EV-005",
+      "title": "Restore test log — 3 of 5 restores failed checksum",
+      "type": "log-sample",
+      "subcategoryIds": [
+        "PR.DS-11"
+      ],
+      "collectedOn": "2026-09-18",
+      "validDays": 180,
+      "scope": "full",
+      "assertion": "refutes",
+      "source": "backup.example",
+      "note": "Deliberate adversarial fixture: current evidence contradicts the configuration export."
+    },
+    {
+      "id": "EV-006",
+      "title": "Network IDS alert sample (export)",
+      "type": "log-sample",
+      "subcategoryIds": [
+        "DE.CM-01"
+      ],
+      "collectedOn": "2025-04-02",
+      "validDays": 90,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "siem.example",
+      "note": "Stale: collected 18 months ago."
+    },
+    {
+      "id": "EV-007",
+      "title": "Monthly patch compliance report",
+      "type": "report",
+      "subcategoryIds": [
+        "PR.PS-02"
+      ],
+      "collectedOn": "2026-09-05",
+      "validDays": 45,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "mdm.example"
+    },
+    {
+      "id": "EV-008",
+      "title": "Change ticket CHG-4411: end-of-life OS removal",
+      "type": "ticket",
+      "subcategoryIds": [
+        "PR.PS-02",
+        "ID.AM-02"
+      ],
+      "collectedOn": "2026-09-12",
+      "validDays": 365,
+      "scope": "partial",
+      "assertion": "supports",
+      "source": "ticketing.example"
+    },
+    {
+      "id": "EV-009",
+      "title": "Vulnerability scan summary (external)",
+      "type": "report",
+      "subcategoryIds": [
+        "ID.RA-01"
+      ],
+      "collectedOn": "2027-02-01",
+      "validDays": 30,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "scanner.example",
+      "note": "Adversarial fixture: future-dated (data-entry error). Should be stale, not fresh."
+    },
+    {
+      "id": "EV-010",
+      "title": "Information security policy suite",
+      "type": "policy",
+      "subcategoryIds": [
+        "GV.PO-01",
+        "GV.RR-02"
+      ],
+      "collectedOn": "2026-07-01",
+      "validDays": 365,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "grc.example"
+    },
+    {
+      "id": "EV-011",
+      "title": "Regulatory obligations register",
+      "type": "procedure",
+      "subcategoryIds": [
+        "GV.OC-03"
+      ],
+      "collectedOn": "2026-03-01",
+      "validDays": 180,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "grc.example",
+      "note": "Aging: 214 days against 180 valid days."
+    },
+    {
+      "id": "EV-012",
+      "title": "Hardware asset export (MDM)",
+      "type": "configuration",
+      "subcategoryIds": [
+        "ID.AM-01"
+      ],
+      "collectedOn": "2026-09-28",
+      "validDays": 30,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "mdm.example"
+    },
+    {
+      "id": "EV-013",
+      "title": "Asset management procedure",
+      "type": "procedure",
+      "subcategoryIds": [
+        "ID.AM-01",
+        "ID.AM-02"
+      ],
+      "collectedOn": "2026-01-10",
+      "validDays": 365,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "grc.example"
+    },
+    {
+      "id": "EV-014",
+      "title": "Supplier criticality attestation (procurement)",
+      "type": "attestation",
+      "subcategoryIds": [
+        "GV.SC-04",
+        "GV.SC-07"
+      ],
+      "collectedOn": "2026-09-01",
+      "validDays": 365,
+      "scope": "partial",
+      "assertion": "supports",
+      "source": "procurement.example"
+    },
+    {
+      "id": "EV-015",
+      "title": "Top-10 supplier risk review",
+      "type": "report",
+      "subcategoryIds": [
+        "GV.SC-07"
+      ],
+      "collectedOn": "2026-04-20",
+      "validDays": 120,
+      "scope": "partial",
+      "assertion": "supports",
+      "source": "grc.example",
+      "note": "Aging and partial: two reasons the outcome stays weak."
+    },
+    {
+      "id": "EV-016",
+      "title": "Incident response plan (tabletop-tested)",
+      "type": "procedure",
+      "subcategoryIds": [
+        "RS.MA-01",
+        "RS.AN-03"
+      ],
+      "collectedOn": "2026-06-12",
+      "validDays": 365,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "grc.example"
+    },
+    {
+      "id": "EV-017",
+      "title": "Tabletop exercise after-action report",
+      "type": "report",
+      "subcategoryIds": [
+        "RS.MA-01",
+        "ID.IM-02"
+      ],
+      "collectedOn": "2026-06-14",
+      "validDays": 365,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "grc.example"
+    },
+    {
+      "id": "EV-018",
+      "title": "Security awareness completion export",
+      "type": "report",
+      "subcategoryIds": [
+        "PR.AT-01"
+      ],
+      "collectedOn": "2026-02-02",
+      "validDays": 365,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "lms.example"
+    },
+    {
+      "id": "EV-019",
+      "title": "Risk appetite statement",
+      "type": "policy",
+      "subcategoryIds": [
+        "GV.RM-02"
+      ],
+      "collectedOn": "2024-11-01",
+      "validDays": 365,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "grc.example",
+      "note": "Stale: 699 days against 365 valid days (1.5x = 547)."
+    },
+    {
+      "id": "EV-020",
+      "title": "Encryption-at-rest configuration (object storage)",
+      "type": "configuration",
+      "subcategoryIds": [
+        "PR.DS-01"
+      ],
+      "collectedOn": "2026-09-25",
+      "validDays": 90,
+      "scope": "full",
+      "assertion": "supports",
+      "source": "cloud.example"
+    },
+    {
+      "id": "EV-021",
+      "title": "Firewall rule review ticket",
+      "type": "ticket",
+      "subcategoryIds": [
+        "PR.IR-01"
+      ],
+      "collectedOn": "2026-08-30",
+      "validDays": 180,
+      "scope": "partial",
+      "assertion": "supports",
+      "source": "ticketing.example"
+    },
+    {
+      "id": "EV-022",
+      "title": "Incident root-cause memo INC-2026-07",
+      "type": "report",
+      "subcategoryIds": [
+        "RS.AN-03"
+      ],
+      "collectedOn": "2026-07-30",
+      "validDays": 365,
+      "scope": "partial",
+      "assertion": "supports",
+      "source": "ticketing.example"
+    }
+  ],
+  "decisions": [
+    {
+      "subcategoryId": "GV.PO-01",
+      "reviewer": "r.kaur",
+      "verdict": "accepted",
+      "rationale": "Looks fine.",
+      "decidedOn": "2026-09-29"
+    },
+    {
+      "subcategoryId": "PR.AA-01",
+      "reviewer": "r.kaur",
+      "verdict": "accepted",
+      "rationale": "Policy EV-001 and MFA export EV-003 corroborated during the 2026-09-23 walkthrough; privileged accounts observed in the IdP admin console.",
+      "decidedOn": "2026-09-29"
+    },
+    {
+      "subcategoryId": "RS.AN-03",
+      "reviewer": "m.okafor",
+      "verdict": "needs-more",
+      "rationale": "Only one incident analysed in the period; request the second memo before the review closes.",
+      "decidedOn": "2026-09-30"
+    },
+    {
+      "subcategoryId": "PR.DS-11",
+      "reviewer": "m.okafor",
+      "verdict": "accepted",
+      "rationale": "Backups are configured and encrypted; the restore failures are being worked in CHG-4420 so I consider this acceptable.",
+      "decidedOn": "2026-09-30"
+    },
+    {
+      "subcategoryId": "RC.CO-03",
+      "reviewer": "m.okafor",
+      "verdict": "accepted",
+      "rationale": "Recovery communications are handled ad hoc by the operations director; accepted for this quarter while the comms template is drafted.",
+      "decidedOn": "2026-09-30"
+    },
+    {
+      "subcategoryId": "GV.RM-02",
+      "reviewer": "r.kaur",
+      "verdict": "accepted",
+      "rationale": "Risk appetite statement was reviewed with the board and judged adequate at the time of the 2024 review.",
+      "decidedOn": "2024-11-15"
+    }
+  ]
+}

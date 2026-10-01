@@ -1,0 +1,1409 @@
+[
+  {
+    "name": "desktop",
+    "status": 200,
+    "url": "http://127.0.0.1:6120/#/RC.CO-03",
+    "errors": [],
+    "failedRequests": [],
+    "layout": {
+      "title": "Tessera — CSF 2.0 outcome-evidence mapper (educational)",
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "headings": [
+        "Tessera",
+        "Outcome mosaic",
+        "RC.CO-03",
+        "Gap register"
+      ],
+      "primaryControls": [
+        {
+          "tag": "A",
+          "text": "Skip to mosaic",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Load demo pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Start empty",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import pack JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RM-02: none, residual 1.00 (moderate), priority 1, has reviewer warning",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RR-02: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.PO-01: partial, residual 1.00 (moderate), priority 2, has reviewer warning",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-04: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-07: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-01: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-02: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-01: none, residual 3.00 (high), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-05: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.IM-02: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-01: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-05: sufficient, residual 0.45 (low), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AT-01: partial, residual 0.50 (low), priority 1",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-11: contradicted, residual 3.00 (high), priority 3, has reviewer warning",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-01: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-02: sufficient, residual 0.45 (low), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.IR-01: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.CM-01: none, residual 3.00 (high), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.AE-02: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.MA-01: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.AN-03: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.RP-01: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.CO-03: accepted-risk, residual 0.60 (low), priority 1",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Close outcome details",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "1 — low2 — standard3 — critical outcome",
+          "type": null,
+          "id": "prio"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "policyprocedureconfigurationlog-samplereportattestationticket",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "fullpartial",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "supports the outcomerefutes the outcome",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add evidence",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "accepted — evidence is adequateneeds more — hold at partialgap — mark weak regardless of evidencenot",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "Recovery communications are handled ad hoc by the operations director; accepted for this quarter whi",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Record decision",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Clear decision",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.CM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.AE-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.RP-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-04",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.IR-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.PO-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RR-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.IM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.AN-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.CO-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AT-01",
+          "type": "button",
+          "id": ""
+        }
+      ],
+      "overflowing": []
+    },
+    "violations": [],
+    "incompleteChecks": [
+      {
+        "id": "color-contrast",
+        "impact": "serious"
+      }
+    ]
+  },
+  {
+    "name": "tablet",
+    "status": 200,
+    "url": "http://127.0.0.1:6120/#/RC.CO-03",
+    "errors": [],
+    "failedRequests": [],
+    "layout": {
+      "title": "Tessera — CSF 2.0 outcome-evidence mapper (educational)",
+      "viewport": 768,
+      "scrollWidth": 768,
+      "headings": [
+        "Tessera",
+        "Outcome mosaic",
+        "RC.CO-03",
+        "Gap register"
+      ],
+      "primaryControls": [
+        {
+          "tag": "A",
+          "text": "Skip to mosaic",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Load demo pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Start empty",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import pack JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RM-02: none, residual 1.00 (moderate), priority 1, has reviewer warning",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RR-02: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.PO-01: partial, residual 1.00 (moderate), priority 2, has reviewer warning",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-04: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-07: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-01: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-02: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-01: none, residual 3.00 (high), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-05: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.IM-02: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-01: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-05: sufficient, residual 0.45 (low), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AT-01: partial, residual 0.50 (low), priority 1",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-11: contradicted, residual 3.00 (high), priority 3, has reviewer warning",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-01: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-02: sufficient, residual 0.45 (low), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.IR-01: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.CM-01: none, residual 3.00 (high), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.AE-02: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.MA-01: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.AN-03: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.RP-01: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.CO-03: accepted-risk, residual 0.60 (low), priority 1",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Close outcome details",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "1 — low2 — standard3 — critical outcome",
+          "type": null,
+          "id": "prio"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "policyprocedureconfigurationlog-samplereportattestationticket",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "fullpartial",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "supports the outcomerefutes the outcome",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add evidence",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "accepted — evidence is adequateneeds more — hold at partialgap — mark weak regardless of evidencenot",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "Recovery communications are handled ad hoc by the operations director; accepted for this quarter whi",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Record decision",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Clear decision",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.CM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.AE-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.RP-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-04",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.IR-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.PO-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RR-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.IM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.AN-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.CO-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AT-01",
+          "type": "button",
+          "id": ""
+        }
+      ],
+      "overflowing": []
+    },
+    "violations": [],
+    "incompleteChecks": [
+      {
+        "id": "color-contrast",
+        "impact": "serious"
+      }
+    ]
+  },
+  {
+    "name": "mobile",
+    "status": 200,
+    "url": "http://127.0.0.1:6120/#/RC.CO-03",
+    "errors": [],
+    "failedRequests": [],
+    "layout": {
+      "title": "Tessera — CSF 2.0 outcome-evidence mapper (educational)",
+      "viewport": 375,
+      "scrollWidth": 375,
+      "headings": [
+        "Tessera",
+        "Outcome mosaic",
+        "RC.CO-03",
+        "Gap register"
+      ],
+      "primaryControls": [
+        {
+          "tag": "A",
+          "text": "Skip to mosaic",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Load demo pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Start empty",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import pack JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RM-02: none, residual 1.00 (moderate), priority 1, has reviewer warning",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RR-02: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.PO-01: partial, residual 1.00 (moderate), priority 2, has reviewer warning",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-04: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-07: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-01: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-02: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-01: none, residual 3.00 (high), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-05: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.IM-02: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-01: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-05: sufficient, residual 0.45 (low), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AT-01: partial, residual 0.50 (low), priority 1",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-11: contradicted, residual 3.00 (high), priority 3, has reviewer warning",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-01: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-02: sufficient, residual 0.45 (low), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.IR-01: weak, residual 1.60 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.CM-01: none, residual 3.00 (high), priority 3",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.AE-02: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.MA-01: sufficient, residual 0.30 (low), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.AN-03: partial, residual 1.00 (moderate), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.RP-01: none, residual 2.00 (high), priority 2",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.CO-03: accepted-risk, residual 0.60 (low), priority 1",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Close outcome details",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "1 — low2 — standard3 — critical outcome",
+          "type": null,
+          "id": "prio"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "policyprocedureconfigurationlog-samplereportattestationticket",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "fullpartial",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "supports the outcomerefutes the outcome",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add evidence",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "accepted — evidence is adequateneeds more — hold at partialgap — mark weak regardless of evidencenot",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "Recovery communications are handled ad hoc by the operations director; accepted for this quarter whi",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Record decision",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Clear decision",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.CM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.AE-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.RP-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-04",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.IR-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.PO-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RR-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.IM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.AN-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.CO-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AT-01",
+          "type": "button",
+          "id": ""
+        }
+      ],
+      "overflowing": [
+        {
+          "tag": "TABLE",
+          "class": ""
+        },
+        {
+          "tag": "THEAD",
+          "class": ""
+        },
+        {
+          "tag": "TR",
+          "class": ""
+        },
+        {
+          "tag": "TH",
+          "class": ""
+        },
+        {
+          "tag": "TBODY",
+          "class": ""
+        },
+        {
+          "tag": "TR",
+          "class": ""
+        },
+        {
+          "tag": "TD",
+          "class": "remed"
+        },
+        {
+          "tag": "TR",
+          "class": ""
+        },
+        {
+          "tag": "TD",
+          "class": "remed"
+        },
+        {
+          "tag": "TR",
+          "class": ""
+        },
+        {
+          "tag": "TD",
+          "class": "remed"
+        },
+        {
+          "tag": "TR",
+          "class": ""
+        },
+        {
+          "tag": "TD",
+          "class": "remed"
+        },
+        {
+          "tag": "TR",
+          "class": ""
+        },
+        {
+          "tag": "TD",
+          "class": "remed"
+        },
+        {
+          "tag": "TR",
+          "class": ""
+        },
+        {
+          "tag": "TD",
+          "class": "remed"
+        },
+        {
+          "tag": "TR",
+          "class": ""
+        },
+        {
+          "tag": "TD",
+          "class": "remed"
+        },
+        {
+          "tag": "TR",
+          "class": ""
+        }
+      ]
+    },
+    "violations": [],
+    "incompleteChecks": [
+      {
+        "id": "color-contrast",
+        "impact": "serious"
+      }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "name": "drawer shows PR.DS-11",
+    "pass": true
+  },
+  {
+    "name": "status contradicted",
+    "pass": true
+  },
+  {
+    "name": "reviewer acceptance refused banner",
+    "pass": true
+  },
+  {
+    "name": "hash deep link",
+    "pass": true
+  },
+  {
+    "name": "stale remediation text",
+    "pass": true
+  },
+  {
+    "name": "status recomputed after add",
+    "pass": true
+  },
+  {
+    "name": "two types -> sufficient",
+    "pass": true
+  },
+  {
+    "name": "short N/A refused",
+    "pass": true
+  },
+  {
+    "name": "substantive N/A accepted",
+    "pass": true
+  },
+  {
+    "name": "import rejected with details",
+    "pass": true
+  },
+  {
+    "name": "csv has header + 25 rows",
+    "pass": true
+  },
+  {
+    "name": "report schema",
+    "pass": true
+  },
+  {
+    "name": "empty gap register has 25 gaps",
+    "pass": true
+  },
+  {
+    "name": "keyboard selects tile",
+    "pass": true
+  },
+  {
+    "name": "no page/console errors",
+    "pass": true
+  },
+  {
+    "name": "mobile no horizontal overflow",
+    "pass": true
+  }
+]
