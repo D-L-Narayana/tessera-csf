@@ -1,0 +1,7 @@
+/* App-level composition. Component styles live next to their components; tokens come from styles.css. */
+.profile > .btnrow { grid-column: 1 / -1; gap: 0.4rem; }
+.profile > .btnrow button { font-size: 0.85rem; padding: 0.4rem 0.65rem; }
+.planning { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; margin-top: 2rem; align-items: start; }
+@media (max-width: 1000px) {
+  .planning { grid-template-columns: 1fr; }
+}

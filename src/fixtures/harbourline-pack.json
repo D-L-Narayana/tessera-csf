@@ -198,7 +198,8 @@
       "validDays": 365,
       "scope": "full",
       "assertion": "supports",
-      "source": "grc.example"
+      "source": "grc.example",
+      "collectedBy": "ops.admin"
     },
     {
       "id": "EV-014",
@@ -294,7 +295,8 @@
       "validDays": 90,
       "scope": "full",
       "assertion": "supports",
-      "source": "cloud.example"
+      "source": "cloud.example",
+      "collectedBy": "m.okafor"
     },
     {
       "id": "EV-021",
@@ -357,6 +359,13 @@
       "reviewer": "m.okafor",
       "verdict": "accepted",
       "rationale": "Recovery communications are handled ad hoc by the operations director; accepted for this quarter while the comms template is drafted.",
+      "decidedOn": "2026-09-30"
+    },
+    {
+      "subcategoryId": "PR.DS-01",
+      "reviewer": "m.okafor",
+      "verdict": "accepted",
+      "rationale": "Object-storage encryption is enforced by the configuration I exported on 2026-09-25; no second artifact type is available this quarter.",
       "decidedOn": "2026-09-30"
     },
     {

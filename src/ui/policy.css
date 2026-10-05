@@ -1,0 +1,16 @@
+/* Rule policy panel. Theme tokens come from styles.css only; state is conveyed by text (badge, labels), not colour alone. */
+.policy__panel { background: var(--paper); border: 1px solid var(--line); padding: 0.6rem 0.9rem 0.8rem; margin-top: 1rem; }
+.policy__summary { cursor: pointer; }
+.policy__title { font-weight: 600; }
+.policy__badge { display: inline-block; margin-left: 0.5rem; padding: 0.05rem 0.5rem; border: 1px solid var(--warn); border-radius: 999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--warn-text); background: var(--paper); vertical-align: middle; }
+.policy__help { color: var(--ink-2); font-size: 0.9rem; margin: 0.6rem 0 0.5rem; }
+.policy__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem 1rem; }
+.policy__field { display: grid; gap: 0.15rem; align-content: start; }
+.policy__label { font-size: 0.8rem; color: var(--ink-2); }
+.policy__input { max-width: 12rem; }
+.policy__hint { margin: 0; }
+.policy__check { display: grid; grid-template-columns: auto 1fr; column-gap: 0.5rem; row-gap: 0.15rem; align-items: center; margin-top: 0.7rem; }
+.policy__checkbox { width: auto; margin: 0; accent-color: var(--ink); }
+.policy__check .policy__hint { grid-column: 2; }
+.policy__note { color: var(--ink-3); font-size: 0.82rem; margin: 0.6rem 0 0; }
+.policy__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.7rem; }

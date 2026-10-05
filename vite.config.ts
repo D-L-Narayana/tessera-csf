@@ -10,7 +10,8 @@ export default defineConfig({
   build: { target: 'es2022', sourcemap: false },
   test: {
     environment: 'node',
-    include: ['tests/**/*.test.ts'],
+    include: ['tests/**/*.test.{ts,tsx}'],
     reporters: ['verbose'],
+    maxWorkers: 2,
   },
 });

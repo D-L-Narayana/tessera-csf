@@ -1,0 +1,35 @@
+/* Compare — period-over-period view against a previously exported report.
+   Only tokens from styles.css are used; status / band / chip / fn / linkish / table-wrap classes come from there too. */
+.compare { margin-top: 2rem; }
+.compare__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.9rem; margin-bottom: 0.9rem; }
+.compare__toggle { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; color: var(--ink-2); }
+.compare__toggle input { width: auto; margin: 0; accent-color: var(--focus); }
+.compare__view { display: grid; gap: 0.75rem; }
+.compare__periods { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem 1.5rem; margin: 0; padding: 0.7rem 0.9rem; background: var(--paper); border: 1px solid var(--line); }
+.compare__periods dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+.compare__periods dd { margin: 0.15rem 0 0; }
+.compare__warnings { background: var(--paper); border-left: 4px solid var(--warn); padding: 0.6rem 0.8rem; }
+.compare__warnings p { margin: 0; }
+.compare__warnings ul { margin: 0.3rem 0 0; padding-left: 1.2rem; }
+.compare__summary { font-family: var(--display); font-size: 1.15rem; margin: 0; }
+.compare__table td { white-space: nowrap; }
+.compare__table td:first-child { white-space: normal; }
+.compare__delta { font-variant-numeric: tabular-nums; font-weight: 700; }
+.compare__delta--up { color: var(--bad); }
+.compare__delta--down { color: var(--good); }
+.compare__delta--zero { color: var(--ink-3); }
+.compare__chip { border: 1px solid transparent; }
+.compare__chip--regressed { background: var(--paper); color: var(--bad); border-color: var(--bad); }
+.compare__chip--improved { background: var(--paper); color: var(--good); border-color: var(--good); }
+.compare__chip--changed { background: var(--paper); color: var(--warn-text); border-color: var(--warn); }
+.compare__chip--added, .compare__chip--removed { background: var(--paper); color: var(--ink-2); border-style: dashed; border-color: var(--stone-2); }
+.compare__row--regressed td:first-child { border-left: 4px solid var(--bad); }
+.compare__row--improved td:first-child { border-left: 4px solid var(--good); }
+.compare__row--changed td:first-child { border-left: 4px solid var(--warn); }
+@media (max-width: 600px) {
+  .compare__periods { grid-template-columns: 1fr; }
+  .compare__table td { white-space: normal; }
+}
+@media print {
+  .compare__actions { display: none; }
+}

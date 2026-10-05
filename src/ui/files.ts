@@ -1,7 +1,14 @@
 // Browser-only helpers for export/import. No network, no storage APIs — downloads use a transient blob URL.
 
-export function downloadText(filename: string, text: string, mime = 'application/json'): void {
-  const blob = new Blob([text], { type: mime + ';charset=utf-8' });
+const BOM = '﻿';
+
+/** Prefix the UTF-8 byte-order mark when requested (spreadsheet apps then open CSV as UTF-8). Never doubles it. */
+export function withBom(text: string, bom: boolean | undefined): string {
+  return bom && !text.startsWith(BOM) ? BOM + text : text;
+}
+
+export function downloadText(filename: string, text: string, mime = 'application/json', opts?: { bom?: boolean }): void {
+  const blob = new Blob([withBom(text, opts?.bom)], { type: mime + ';charset=utf-8' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;

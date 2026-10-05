@@ -1,0 +1,19 @@
+/* Drawer forms: evidence add/edit (evform__) and reviewer decision preview (decision__).
+   Only tokens from styles.css are used so both colour schemes and print inherit automatically. */
+.evform__id { margin: 0; font-family: var(--display); font-weight: 600; color: var(--ink-2); }
+.evform__also { margin: 0; min-inline-size: 0; border: 1px solid var(--line); border-radius: 4px; padding: 0.4rem 0.7rem 0.6rem; }
+.evform__also legend { padding: 0 0.3rem; font-size: 0.8rem; color: var(--ink-2); }
+.evform__hint { margin: 0 0 0.45rem; }
+.evform__options { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.25rem 0.75rem; max-height: 11rem; overflow: auto; padding: 0.1rem; }
+.evform__option { display: flex; align-items: baseline; gap: 0.4rem; font-size: 0.85rem; color: var(--ink); }
+.evform__option > span { display: inline; margin: 0; font-size: inherit; color: inherit; }
+.evform__option input { width: auto; margin: 0; flex: none; }
+.evform__code { font-family: var(--display); font-weight: 600; }
+.evform__cat { color: var(--ink-3); }
+
+.decision__meta { margin: 0; color: var(--ink-2); }
+.decision__preview { display: grid; gap: 0.3rem; padding: 0.6rem 0.8rem; border: 1px dashed var(--line); background: var(--ground); }
+.decision__preview h4 { font-size: 0.85rem; }
+.decision__preview p { margin: 0; }
+.decision__refusals { margin: 0; padding-left: 1.2rem; font-size: 0.88rem; color: var(--bad); }
+.decision__ok { color: var(--good); }

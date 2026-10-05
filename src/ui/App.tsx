@@ -1,13 +1,27 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { CATALOG, CSF_VERSION, SUBSET_LABEL } from '../engine/catalog';
-import { buildReport, reportToCsvRows, toCsv, MIN_OVERRIDE_RATIONALE } from '../engine/evaluate';
+import { buildReport } from '../engine/evaluate';
+import { effectivePolicy, type RulePolicy } from '../engine/policy';
 import { MAX_PACK_BYTES, validatePack, validatePackObject } from '../engine/validate';
-import type { Decision, Evidence, EvidencePack, Priority, SubcategoryResult, Verdict } from '../engine/types';
+import type { Decision, Evidence, EvidencePack, Priority, SubcategoryResult } from '../engine/types';
 import { EVIDENCE_TYPES } from '../engine/types';
 import demoPack from '../fixtures/harbourline-pack.json';
-import { downloadText, readTextFile } from './files';
+import { readTextFile } from './files';
 import { Mosaic } from './Mosaic';
 import { Drawer } from './Drawer';
+import { GapRegister } from './GapRegister';
+import { Legend } from './Legend';
+import { Summary } from './Summary';
+import { Horizon } from './Horizon';
+import { Compare } from './Compare';
+import { PolicyPanel } from './PolicyPanel';
+import { ExportMenu } from './ExportMenu';
+import { SessionBar } from './SessionBar';
+import { canRedo, canUndo, createHistory, push, redo, undo, type History } from './history';
+import { fingerprint, isDirty } from './dirty';
+import { detectStorage, loadSession, type KeyValueStore } from './storage';
+import { useBeforeUnload, usePersistedSession } from './useSession';
+import './app.css';
 
 export type Notice = { kind: 'info' | 'error' | 'success'; text: string; details?: string[] } | null;
 
@@ -26,19 +40,51 @@ function loadDemo(): EvidencePack {
   return r.pack;
 }
 
+/** Deep link `#/PR.DS-11`. Safe during render in environments without `location` (server rendering in tests). */
 function readHash(): string | null {
+  if (typeof location === 'undefined') return null;
   const m = /^#\/([A-Z]{2}\.[A-Z]{2}-\d{2})$/.exec(location.hash);
   return m && CATALOG.some((s) => s.id === m[1]) ? m[1] : null;
 }
 
+const DISCARD_PROMPT = 'You have changes that are not exported or saved in this browser. Replace the current session? Undo can still bring it back.';
+
 export default function App() {
-  const [pack, setPack] = useState<EvidencePack>(() => loadDemo());
+  const [hist, setHist] = useState<History<EvidencePack>>(() => createHistory(loadDemo()));
+  const pack = hist.present;
   const [selected, setSelected] = useState<string | null>(() => readHash() ?? 'PR.DS-11');
   const [notice, setNotice] = useState<Notice>({ kind: 'info', text: 'Loaded the bundled synthetic demo pack (Harbourline Logistics). Nothing here is real evidence.' });
+  const [exportedFp, setExportedFp] = useState<string | null>(() => fingerprint(hist.present));
+  const [reviewer, setReviewer] = useState('');
+  const [store, setStore] = useState<KeyValueStore | null>(null);
+  const [persistEnabled, setPersistEnabled] = useState(false);
+  const [storedSession, setStoredSession] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const report = useMemo(() => buildReport(pack), [pack]);
   const byId = useMemo(() => new Map(report.results.map((r) => [r.subcategoryId, r])), [report]);
+  const policy = effectivePolicy(pack);
+  const dirty = isDirty(pack, exportedFp);
+
+  // Storage is probed once, in an effect (never during render). A saved session is restored only when the user kept
+  // one; a stored copy that fails validation is reported and left for "Forget saved session" to delete.
+  useEffect(() => {
+    const s = detectStorage();
+    setStore(s);
+    if (!s) return;
+    const r = loadSession(s);
+    if (r.ok) {
+      setHist(createHistory(r.session.pack));
+      setExportedFp(null); // the restored copy exists only in this browser: it counts as not exported
+      setPersistEnabled(true);
+      setStoredSession(true);
+      if (!readHash() && r.session.selected) setSelected(r.session.selected);
+      setNotice({ kind: 'info', text: `Restored the session saved in this browser (${r.session.savedAt.slice(0, 16).replace('T', ' ')} UTC). Use "Forget saved session" to delete it.` });
+    } else if (r.reason !== 'no saved session') {
+      setStoredSession(true);
+      setNotice({ kind: 'error', text: `A session saved in this browser was found but not restored: ${r.reason}. The demo pack is loaded instead; "Forget saved session" deletes the stored copy.` });
+    }
+  }, []);
 
   useEffect(() => {
     const onHash = () => setSelected(readHash());
@@ -46,10 +92,36 @@ export default function App() {
     return () => removeEventListener('hashchange', onHash);
   }, []);
 
+  const session = usePersistedSession({ pack, selected, enabled: persistEnabled, store });
+  useBeforeUnload(dirty && !persistEnabled);
+
+  function setPack(next: EvidencePack | ((p: EvidencePack) => EvidencePack)) {
+    setHist((h) => push(h, typeof next === 'function' ? next(h.present) : next));
+  }
+
+  /** Replace the whole pack (load demo / start empty / import) as one undoable step; a reproducible pack counts as exported. */
+  function replacePack(next: EvidencePack) {
+    setHist((h) => push(h, next));
+    setExportedFp(fingerprint(next));
+  }
+
+  function confirmDiscard(): boolean {
+    return !dirty || window.confirm(DISCARD_PROMPT);
+  }
+
   function select(id: string | null) {
     setSelected(id);
     const target = id ? '#/' + id : '#';
-    if (location.hash !== target) history.replaceState(null, '', target);
+    if (location.hash !== target) window.history.replaceState(null, '', target);
+  }
+
+  function closeDrawer() {
+    const previous = selected;
+    select(null);
+    if (previous) {
+      // Return focus to the tile the drawer came from (tiles render data-tile-id).
+      requestAnimationFrame(() => document.querySelector<HTMLElement>(`[data-tile-id="${previous}"]`)?.focus());
+    }
   }
 
   function updateProfile(patch: Partial<EvidencePack['profile']>) {
@@ -58,6 +130,18 @@ export default function App() {
 
   function setPriority(id: string, priority: Priority) {
     setPack((p) => ({ ...p, profile: { ...p.profile, priorities: { ...p.profile.priorities, [id]: priority } } }));
+  }
+
+  function setPolicy(next: RulePolicy | null) {
+    setPack((p) => {
+      const rest: EvidencePack = { schema: p.schema, profile: p.profile, evidence: p.evidence, decisions: p.decisions };
+      return next ? { ...rest, policy: next } : rest;
+    });
+    setNotice(
+      next
+        ? { kind: 'info', text: 'Rule policy changed. Every status was recomputed; the policy is stored in the pack and embedded in exported reports.' }
+        : { kind: 'info', text: 'Rule policy reset to the documented defaults.' },
+    );
   }
 
   function addEvidence(e: Evidence): string | null {
@@ -69,9 +153,18 @@ export default function App() {
     return null;
   }
 
+  function updateEvidence(e: Evidence): string | null {
+    if (!pack.evidence.some((x) => x.id === e.id)) return `Evidence id ${e.id} no longer exists.`;
+    const check = validatePackObject({ ...pack, evidence: pack.evidence.map((x) => (x.id === e.id ? e : x)) });
+    if (!check.ok) return check.issues.map((i) => `${i.path}: ${i.message}`).join(' ');
+    setPack(check.pack);
+    setNotice({ kind: 'success', text: `Saved changes to ${e.id}. The mosaic recomputed.` });
+    return null;
+  }
+
   function removeEvidence(id: string) {
     setPack((p) => ({ ...p, evidence: p.evidence.filter((e) => e.id !== id) }));
-    setNotice({ kind: 'info', text: `Removed ${id}. The mosaic recomputed.` });
+    setNotice({ kind: 'info', text: `Removed ${id}. The mosaic recomputed. Undo restores it.` });
   }
 
   function setDecision(d: Decision | null, subcategoryId: string) {
@@ -91,7 +184,7 @@ export default function App() {
         setNotice({ kind: 'error', text: `Import rejected: ${r.issues.length} issue(s). Nothing was changed.`, details: r.issues.map((i) => `${i.path || 'pack'} — ${i.message}`) });
         return;
       }
-      setPack(r.pack);
+      replacePack(r.pack);
       setNotice({ kind: 'success', text: `Imported ${r.pack.evidence.length} evidence items and ${r.pack.decisions.length} decisions from ${file.name}.` });
     } catch (err) {
       setNotice({ kind: 'error', text: err instanceof Error ? err.message : 'Import failed.' });
@@ -100,7 +193,15 @@ export default function App() {
     }
   }
 
-  const stamp = pack.profile.asOf.replace(/-/g, '');
+  function onExported(kind: string) {
+    if (kind === 'pack') {
+      setExportedFp(fingerprint(pack));
+      setNotice({ kind: 'success', text: 'Exported the pack. Import it later to continue this review.' });
+    } else {
+      setNotice({ kind: 'success', text: `Exported ${kind}.` });
+    }
+  }
+
   const selectedResult: SubcategoryResult | undefined = selected ? byId.get(selected) : undefined;
   const selectedSub = selected ? CATALOG.find((s) => s.id === selected) : undefined;
 
@@ -124,16 +225,37 @@ export default function App() {
             <input type="date" value={pack.profile.asOf} onChange={(e) => e.target.value && updateProfile({ asOf: e.target.value })} />
           </label>
           <div className="profile__actions" role="group" aria-label="Pack actions">
-            <button type="button" onClick={() => { setPack(loadDemo()); select('PR.DS-11'); setNotice({ kind: 'info', text: 'Reloaded the synthetic demo pack.' }); }}>Load demo pack</button>
-            <button type="button" onClick={() => { setPack(emptyPack()); select(null); setNotice({ kind: 'info', text: 'Started an empty profile. Pick a tile and add evidence, or import a pack.' }); }}>Start empty</button>
-            <button type="button" onClick={() => fileRef.current?.click()}>Import pack JSON</button>
+            <button type="button" onClick={() => { if (!confirmDiscard()) return; replacePack(loadDemo()); select('PR.DS-11'); setNotice({ kind: 'info', text: 'Reloaded the synthetic demo pack.' }); }}>Load demo pack</button>
+            <button type="button" onClick={() => { if (!confirmDiscard()) return; replacePack(emptyPack()); select(null); setNotice({ kind: 'info', text: 'Started an empty profile. Pick a tile and add evidence, or import a pack.' }); }}>Start empty</button>
+            <button type="button" onClick={() => { if (confirmDiscard()) fileRef.current?.click(); }}>Import pack JSON</button>
             <input ref={fileRef} type="file" accept="application/json,.json" hidden aria-hidden="true" tabIndex={-1} onChange={(e) => void onImport(e.target.files?.[0])} />
-            <button type="button" onClick={() => downloadText(`tessera-pack-${stamp}.json`, JSON.stringify(pack, null, 2))}>Export pack</button>
-            <button type="button" onClick={() => downloadText(`tessera-report-${stamp}.json`, JSON.stringify(report, null, 2))}>Export report JSON</button>
-            <button type="button" onClick={() => downloadText(`tessera-report-${stamp}.csv`, toCsv(reportToCsvRows(report)), 'text/csv')}>Export report CSV</button>
           </div>
+          <ExportMenu pack={pack} report={report} onExported={onExported} />
         </form>
       </header>
+
+      <SessionBar
+        dirty={dirty}
+        storageAvailable={store !== null}
+        persistEnabled={persistEnabled}
+        lastSavedAt={session.lastSavedAt}
+        lastError={session.lastError}
+        storedSession={storedSession}
+        canUndo={canUndo(hist)}
+        canRedo={canRedo(hist)}
+        onTogglePersist={(v) => {
+          setPersistEnabled(v);
+          if (v) setStoredSession(true);
+          setNotice(
+            v
+              ? { kind: 'info', text: 'This session will be kept in this browser (unencrypted, synthetic data only) until you press "Forget saved session".' }
+              : { kind: 'info', text: 'Saving to this browser is paused. The last saved copy stays until you press "Forget saved session".' },
+          );
+        }}
+        onForget={() => { session.forget(); setPersistEnabled(false); setStoredSession(false); setNotice({ kind: 'info', text: 'Deleted the session saved in this browser.' }); }}
+        onUndo={() => setHist((h) => undo(h))}
+        onRedo={() => setHist((h) => redo(h))}
+      />
 
       {notice && (
         <div className={`notice notice--${notice.kind}`} role={notice.kind === 'error' ? 'alert' : 'status'}>
@@ -149,6 +271,10 @@ export default function App() {
         </div>
       )}
 
+      <Summary report={report} />
+
+      <PolicyPanel policy={policy} onChange={setPolicy} />
+
       <main className="workbench">
         <section className="mosaic-pane" id="mosaic" aria-labelledby="mosaic-h">
           <div className="pane-head">
@@ -159,20 +285,23 @@ export default function App() {
           <Legend />
         </section>
 
-        <aside className="drawer-pane" aria-live="polite">
+        <aside className="drawer-pane">
           {selectedResult && selectedSub ? (
             <Drawer
               key={selectedSub.id}
               sub={selectedSub}
               result={selectedResult}
               pack={pack}
-              minRationale={MIN_OVERRIDE_RATIONALE}
+              policy={policy}
               evidenceTypes={EVIDENCE_TYPES}
+              defaultReviewer={reviewer}
+              onReviewerChange={setReviewer}
               onAddEvidence={addEvidence}
+              onUpdateEvidence={updateEvidence}
               onRemoveEvidence={removeEvidence}
               onDecision={(d) => setDecision(d, selectedSub.id)}
               onPriority={(p) => setPriority(selectedSub.id, p)}
-              onClose={() => select(null)}
+              onClose={closeDrawer}
             />
           ) : (
             <div className="drawer drawer--empty">
@@ -183,87 +312,18 @@ export default function App() {
         </aside>
       </main>
 
-      <section className="gaps" aria-labelledby="gaps-h">
-        <div className="pane-head">
-          <h2 id="gaps-h">Gap register</h2>
-          <p className="pane-help">{report.gaps.length} of {report.results.length} outcomes are not sufficiently evidenced, ranked by residual exposure (priority × status exposure).</p>
-        </div>
-        {report.gaps.length === 0 ? (
-          <p className="empty">Every outcome in the subset is sufficient or not applicable. Export the report to keep the trace.</p>
-        ) : (
-          <div className="table-wrap" tabIndex={0} role="region" aria-label="Gap register table">
-            <table>
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Outcome</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Residual</th>
-                  <th scope="col">Remediation</th>
-                </tr>
-              </thead>
-              <tbody>
-                {report.gaps.map((g, i) => {
-                  const s = CATALOG.find((c) => c.id === g.subcategoryId)!;
-                  return (
-                    <tr key={g.subcategoryId} className={g.subcategoryId === selected ? 'is-selected' : ''}>
-                      <td>{i + 1}</td>
-                      <td>
-                        <button type="button" className="linkish" onClick={() => select(g.subcategoryId)}>
-                          <span className={`fn fn--${s.fn}`}>{s.id}</span>
-                        </button>
-                        <div className="muted small">{s.categoryName}</div>
-                      </td>
-                      <td>
-                        <span className={`status status--${g.status}`}>{g.status}</span>
-                        {g.override && <span className="small muted"> {g.overrideValid ? 'override' : 'invalid override'}</span>}
-                      </td>
-                      <td>
-                        <span className={`band band--${g.band}`}>{g.residual.toFixed(2)}</span>
-                        <div className="muted small">priority {g.priority}</div>
-                      </td>
-                      <td className="remed">{g.remediation}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        )}
-      </section>
+      <div className="planning">
+        <Horizon pack={pack} onSelect={select} />
+        <Compare report={report} onSelect={select} onNotice={setNotice} />
+      </div>
+
+      <GapRegister report={report} selected={selected} onSelect={select} />
 
       <footer className="foot">
         <p>
-          Session state lives in memory only and resets on refresh; export a pack to keep it. Reviewer decisions are valid for 365 days from their date and are ignored (with a warning) when stale or future-dated. Subcategory text from NIST CSWP 29 (Feb 26, 2024). Function colours and the status patterns are this project's own encoding, not NIST's.
+          Session state lives in memory and resets on refresh unless you choose to keep it in this browser; export a pack to keep it anywhere else. Reviewer decisions are valid for {policy.decisionValidDays} days from their date and are ignored (with a warning) when stale or future-dated. Subcategory text from NIST CSWP 29 (Feb 26, 2024). Function colours and the status patterns are this project's own encoding, not NIST's.
         </p>
       </footer>
     </div>
   );
 }
-
-function Legend() {
-  const items: [string, string][] = [
-    ['sufficient', 'Sufficient: coverage ≥ 1.0 from two or more evidence types'],
-    ['partial', 'Partial: enough weight but a single evidence type'],
-    ['weak', 'Weak: some current evidence, coverage below 1.0'],
-    ['none', 'None: no current evidence (may have stale artifacts)'],
-    ['contradicted', 'Contradicted: current evidence both supports and refutes'],
-    ['refuted', 'Refuted: only refuting evidence'],
-    ['accepted-risk', 'Accepted risk: reviewer accepted with no current evidence — stays a gap'],
-    ['not-applicable', 'Not applicable (reviewer decision)'],
-  ];
-  return (
-    <dl className="legend" aria-label="Status pattern legend">
-      {items.map(([k, label]) => (
-        <div key={k} className="legend__item">
-          <dt>
-            <span className={`tile tile--legend pat--${k}`} aria-hidden="true" />
-          </dt>
-          <dd>{label}</dd>
-        </div>
-      ))}
-    </dl>
-  );
-}
-
-export type { Verdict };

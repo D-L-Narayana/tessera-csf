@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dln-tessera.vercel.app/schemas/tessera.report.v1.schema.json",
+  "title": "Tessera report (tessera.report/1)",
+  "description": "A report as exported by Tessera: one result per subcategory of the 25-subcategory educational subset of NIST CSF 2.0, per-function rollups, the ranked gap register, the engine's notes and the rule policy the report was computed with. Residual scores are a custom educational heuristic, not a NIST score, tier or maturity rating. Synthetic, educational data only; this is not a certification, attestation or audit opinion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "generatedFor", "asOf", "framework", "subset", "results", "rollups", "gaps",
+    "scoringNote", "decisionPolicy", "disclaimer", "policy", "policyIsDefault"
+  ],
+  "properties": {
+    "schema": { "const": "tessera.report/1" },
+    "generatedFor": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "asOf": { "$ref": "#/$defs/isoDate" },
+    "framework": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "subset": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "results": {
+      "type": "array",
+      "description": "Exactly one result per subcategory in the subset, in catalog order.",
+      "minItems": 25,
+      "maxItems": 25,
+      "items": { "$ref": "#/$defs/result" }
+    },
+    "rollups": {
+      "type": "array",
+      "description": "One rollup per CSF function.",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "$ref": "#/$defs/rollup" }
+    },
+    "gaps": {
+      "type": "array",
+      "description": "Results that are neither sufficient nor not-applicable, sorted by residual descending, then by id.",
+      "maxItems": 25,
+      "items": { "$ref": "#/$defs/result" }
+    },
+    "scoringNote": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "decisionPolicy": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "disclaimer": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "policy": { "$ref": "#/$defs/policy" },
+    "policyIsDefault": { "type": "boolean" }
+  },
+  "$defs": {
+    "isoDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "shortText": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "longText": { "type": "string", "maxLength": 2000 },
+    "person": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "subcategoryId": {
+      "type": "string",
+      "maxLength": 16,
+      "enum": [
+        "GV.OC-03", "GV.RM-02", "GV.RR-02", "GV.PO-01", "GV.SC-04", "GV.SC-07",
+        "ID.AM-01", "ID.AM-02", "ID.RA-01", "ID.RA-05", "ID.IM-02",
+        "PR.AA-01", "PR.AA-05", "PR.AT-01", "PR.DS-01", "PR.DS-11", "PR.PS-01", "PR.PS-02", "PR.IR-01",
+        "DE.CM-01", "DE.AE-02",
+        "RS.MA-01", "RS.AN-03",
+        "RC.RP-01", "RC.CO-03"
+      ]
+    },
+    "priority": { "type": "integer", "enum": [1, 2, 3] },
+    "verdict": { "type": "string", "enum": ["accepted", "gap", "needs-more", "not-applicable"] },
+    "status": {
+      "type": "string",
+      "enum": ["sufficient", "partial", "weak", "none", "contradicted", "refuted", "accepted-risk", "not-applicable"]
+    },
+    "band": { "type": "string", "enum": ["low", "moderate", "high"] },
+    "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+    "exposureFactor": { "type": "number", "minimum": 0, "maximum": 1 },
+    "bandThreshold": { "type": "number", "minimum": 0.01, "maximum": 3 },
+    "evidenceAssessment": {
+      "type": "object",
+      "description": "How one artifact counted for one outcome at the as-of date.",
+      "additionalProperties": false,
+      "required": ["evidenceId", "freshness", "ageDays", "weight"],
+      "properties": {
+        "evidenceId": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "freshness": { "type": "string", "enum": ["fresh", "aging", "stale"] },
+        "ageDays": { "type": "integer" },
+        "weight": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "result": {
+      "type": "object",
+      "description": "The evaluation of one subcategory, including the human-readable derivation trace (reasons) and refused or noteworthy reviewer actions (warnings).",
+      "additionalProperties": false,
+      "required": [
+        "subcategoryId", "status", "computedStatus", "coverage", "distinctTypes", "evidence", "contradictions",
+        "priority", "residual", "band", "override", "overrideValid", "reasons", "warnings"
+      ],
+      "properties": {
+        "subcategoryId": { "$ref": "#/$defs/subcategoryId" },
+        "status": { "$ref": "#/$defs/status" },
+        "computedStatus": { "$ref": "#/$defs/status" },
+        "coverage": { "type": "number", "minimum": 0 },
+        "distinctTypes": { "type": "integer", "minimum": 0, "maximum": 7 },
+        "evidence": { "type": "array", "maxItems": 500, "items": { "$ref": "#/$defs/evidenceAssessment" } },
+        "contradictions": { "type": "array", "maxItems": 500, "items": { "type": "string", "minLength": 1, "maxLength": 64 } },
+        "priority": { "$ref": "#/$defs/priority" },
+        "residual": { "type": "number", "minimum": 0, "maximum": 3 },
+        "band": { "$ref": "#/$defs/band" },
+        "override": { "type": "boolean" },
+        "overrideValid": { "type": "boolean" },
+        "overrideIssue": { "type": "string", "enum": ["short-rationale", "self-review"] },
+        "decision": { "$ref": "#/$defs/decision" },
+        "decisionAgeDays": { "type": "integer" },
+        "reasons": { "type": "array", "items": { "type": "string" } },
+        "warnings": { "type": "array", "items": { "type": "string" } },
+        "remediation": { "type": "string" }
+      }
+    },
+    "rollup": {
+      "type": "object",
+      "description": "Per-function summary. meanResidual is null and band is not-assessed when every outcome in the function is scoped out as not applicable.",
+      "additionalProperties": false,
+      "required": ["fn", "functionName", "count", "assessed", "sufficient", "meanResidual", "band"],
+      "properties": {
+        "fn": { "type": "string", "enum": ["GV", "ID", "PR", "DE", "RS", "RC"] },
+        "functionName": { "$ref": "#/$defs/shortText" },
+        "count": { "type": "integer", "minimum": 0, "maximum": 25 },
+        "assessed": { "type": "integer", "minimum": 0, "maximum": 25 },
+        "sufficient": { "type": "integer", "minimum": 0, "maximum": 25 },
+        "meanResidual": { "type": ["number", "null"], "minimum": 0, "maximum": 3 },
+        "band": { "type": "string", "enum": ["low", "moderate", "high", "not-assessed"] }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "description": "A reviewer decision for one subcategory. Decisions age: older than the policy's decisionValidDays (or dated after as-of) they are ignored with a warning.",
+      "additionalProperties": false,
+      "required": ["subcategoryId", "reviewer", "verdict", "rationale", "decidedOn"],
+      "properties": {
+        "subcategoryId": { "$ref": "#/$defs/subcategoryId" },
+        "reviewer": { "$ref": "#/$defs/person" },
+        "verdict": { "$ref": "#/$defs/verdict" },
+        "rationale": { "$ref": "#/$defs/longText" },
+        "decidedOn": { "$ref": "#/$defs/isoDate" }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "description": "Rule policy (tessera.policy/1): every threshold the engine uses. Absent from a pack means the default policy; every report embeds the policy it was computed with. Constraints not expressible here: fresh ≥ aging ≥ stale, full ≥ partial, moderate < high.",
+      "additionalProperties": false,
+      "required": [
+        "schema", "agingMultiplier", "freshnessWeights", "scopeWeights", "sufficientCoverage", "minDistinctTypes",
+        "exposure", "bands", "minOverrideRationale", "decisionValidDays", "separationOfDuties"
+      ],
+      "properties": {
+        "schema": { "const": "tessera.policy/1" },
+        "agingMultiplier": { "type": "number", "minimum": 1, "maximum": 5 },
+        "freshnessWeights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["fresh", "aging", "stale"],
+          "properties": {
+            "fresh": { "$ref": "#/$defs/weight" },
+            "aging": { "$ref": "#/$defs/weight" },
+            "stale": { "$ref": "#/$defs/weight" }
+          }
+        },
+        "scopeWeights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["full", "partial"],
+          "properties": {
+            "full": { "$ref": "#/$defs/weight" },
+            "partial": { "$ref": "#/$defs/weight" }
+          }
+        },
+        "sufficientCoverage": { "type": "number", "minimum": 0.1, "maximum": 10 },
+        "minDistinctTypes": { "type": "integer", "minimum": 1, "maximum": 7 },
+        "exposure": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["none", "refuted", "contradicted", "weak", "partial", "sufficient", "accepted-risk", "not-applicable"],
+          "properties": {
+            "none": { "$ref": "#/$defs/exposureFactor" },
+            "refuted": { "$ref": "#/$defs/exposureFactor" },
+            "contradicted": { "$ref": "#/$defs/exposureFactor" },
+            "weak": { "$ref": "#/$defs/exposureFactor" },
+            "partial": { "$ref": "#/$defs/exposureFactor" },
+            "sufficient": { "$ref": "#/$defs/exposureFactor" },
+            "accepted-risk": { "$ref": "#/$defs/exposureFactor" },
+            "not-applicable": { "const": 0 }
+          }
+        },
+        "bands": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["moderate", "high"],
+          "properties": {
+            "moderate": { "$ref": "#/$defs/bandThreshold" },
+            "high": { "$ref": "#/$defs/bandThreshold" }
+          }
+        },
+        "minOverrideRationale": { "type": "integer", "minimum": 0, "maximum": 2000 },
+        "decisionValidDays": { "type": "integer", "minimum": 1, "maximum": 3650 },
+        "separationOfDuties": { "type": "boolean" }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/* Horizon panel. Uses only the shared tokens from styles.css; status and change are always carried by text, never by colour alone. */
+.horizon__panel { margin-top: 2rem; }
+.horizon__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 0.5rem 1.5rem; }
+.horizon__controls { display: grid; gap: 0.15rem; }
+.horizon__controls label { font-size: 0.8rem; color: var(--ink-2); }
+.horizon__controls select { width: auto; min-width: 7rem; }
+
+.horizon__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1rem; }
+.horizon__group { background: var(--paper); border: 1px solid var(--line); padding: 0.8rem 0.9rem 0.9rem; display: grid; gap: 0.5rem; align-content: start; }
+.horizon__group-head { display: flex; align-items: baseline; gap: 0.5rem; }
+.horizon__count { font-weight: 600; }
+
+.horizon__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+.horizon__row { border-top: 1px solid var(--line); padding-top: 0.5rem; display: grid; gap: 0.25rem; }
+.horizon__row:first-child { border-top: 0; padding-top: 0; }
+.horizon__link { text-align: left; line-height: 1.35; }
+.horizon__id { font-family: var(--display); font-weight: 700; }
+.horizon__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.6rem; font-size: 0.85rem; color: var(--ink-2); }
+
+.horizon__change--worsens { color: var(--bad); }
+.horizon__change--improves { color: var(--good); }
+.horizon__change--same { color: var(--ink-2); }
+
+.horizon__note { margin-top: 0.75rem; }

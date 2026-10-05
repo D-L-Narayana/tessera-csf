@@ -1,0 +1,62 @@
+/* Gap register (filters, sortable headers, card layout at narrow widths) and the executive summary.
+   Only tokens defined in styles.css are used. Proportional visuals are SVG attributes, never styled widths. */
+
+/* Filter bar ---------------------------------------------------------------- */
+.register__filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.6rem 0.8rem; align-items: end; margin-bottom: 0.6rem; }
+.register__field { display: grid; gap: 0.15rem; min-width: 0; }
+.register__field label { font-size: 0.8rem; color: var(--ink-2); }
+.register__check { grid-column: 1 / -1; display: flex; align-items: center; gap: 0.45rem; }
+.register__check input { width: auto; margin: 0; accent-color: var(--focus); }
+.register__check label { font-size: 0.9rem; }
+.register__actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.4rem 1rem; }
+.register__count { color: var(--ink-2); font-size: 0.9rem; margin: 0; }
+
+/* Sortable headers: a real button inside the th, styled like the header text ---- */
+.register__sort { background: none; border: 0; border-radius: 0; padding: 0; color: inherit; font: inherit; text-transform: inherit; letter-spacing: inherit; text-align: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem; }
+.register__sort:hover { background: none; color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+.register__sort-icon { font-size: 0.8em; color: var(--ink-3); }
+th[aria-sort="ascending"] .register__sort, th[aria-sort="descending"] .register__sort { color: var(--ink); }
+th[aria-sort="ascending"] .register__sort-icon, th[aria-sort="descending"] .register__sort-icon { color: var(--ink); }
+
+/* Visually hidden, still available to assistive technology ------------------- */
+.register__sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+/* Card layout: each row becomes a block and every cell is preceded by its column name */
+@media (max-width: 600px) {
+  .register__table, .register__table tbody, .register__table tr, .register__table td { display: block; }
+  .register__table thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+  .register__table tr { padding: 0.35rem 0; border-bottom: 2px solid var(--line); }
+  .register__table tr:last-child { border-bottom: 0; }
+  .register__table td { border-bottom: 0; padding: 0.3rem 0.7rem; }
+  .register__table td::before { content: attr(data-label); display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); margin-bottom: 0.1rem; }
+  .register__table td.remed { max-width: none; }
+  .register__filters { grid-template-columns: 1fr 1fr; }
+  .register__field--search { grid-column: 1 / -1; }
+}
+
+/* Executive summary ----------------------------------------------------------- */
+.summary { margin-top: 1.5rem; background: var(--paper); border: 1px solid var(--line); padding: 1rem 1.1rem 1.1rem; display: grid; gap: 0.8rem; }
+.summary__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.25rem 1rem; }
+.summary__meta { color: var(--ink-2); font-size: 0.9rem; margin: 0; }
+.summary__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem 2rem; }
+.summary__block { display: grid; gap: 0.45rem; align-content: start; min-width: 0; }
+.summary__block h3 { font-family: var(--body); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+.summary__chart { display: block; width: 100%; height: 0.9rem; border: 1px solid var(--line); border-radius: 2px; background: var(--paper); }
+.summary__bar { fill: var(--stone-2); stroke: var(--paper); stroke-width: 1; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+/* Segment fills reuse the semantic tokens; the text list next to the bar carries every count, so colour is never the only cue. */
+.summary__bar--sufficient { fill: var(--good); }
+.summary__bar--partial, .summary__bar--weak, .summary__bar--accepted-risk { fill: var(--warn); }
+.summary__bar--none { fill: var(--stone-2); }
+.summary__bar--contradicted, .summary__bar--refuted { fill: var(--bad); }
+.summary__bar--not-applicable { fill: var(--stone); }
+.summary__swatch { display: inline-block; width: 0.75rem; height: 0.75rem; margin-right: 0.4rem; border: 1px solid var(--line); border-radius: 2px; vertical-align: -0.08em; background: var(--stone-2); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.summary__swatch--sufficient { background: var(--good); }
+.summary__swatch--partial { background: var(--warn); }
+.summary__swatch--weak { background: repeating-linear-gradient(45deg, var(--paper) 0 1px, transparent 1px 3px), var(--warn); }
+.summary__swatch--none { background: var(--stone-2); }
+.summary__swatch--contradicted, .summary__swatch--refuted { background: var(--bad); }
+.summary__swatch--accepted-risk { background: var(--warn); border-style: double; border-color: var(--ink-3); }
+.summary__swatch--not-applicable { background: var(--stone); border-style: dashed; }
+.summary__statuses, .summary__functions { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; font-size: 0.9rem; }
+.summary__statuses { grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); }
+.summary__line { margin: 0; font-size: 0.95rem; }

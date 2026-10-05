@@ -1,6 +1,9 @@
 /* Tessera — mosaic workbench. Palette: cool mineral ground, ink, six muted function hues.
-   Status is encoded by pattern (not colour alone); function by hue. */
+   Status is encoded by pattern (not colour alone); function by hue.
+   One token set serves both colour schemes: the light values below, and a dark set under prefers-color-scheme.
+   Every token used as text keeps ≥ 4.5:1 against the surfaces it appears on in both schemes (tests/contrast.test.ts). */
 :root {
+  color-scheme: light dark;
   --ground: #e9ecef;
   --paper: #f7f8f9;
   --ink: #121a26;
@@ -21,9 +24,70 @@
   --warn: #b07a1f; /* borders/fills only */
   --warn-text: #8a5a10;
   --good: #276b5c;
+  /* Fills and panel backgrounds — never used as text. */
+  --tile-base: #ffffff; /* the surface status fills are mixed towards */
+  --tile-mix: 72%; /* share of the function hue in a sufficient tile */
+  --tile-mix-partial: 62%; /* strong stripe of a partial tile */
+  --tile-mix-faint: 25%; /* faint stripe of a partial tile */
+  --tile-mix-weak: 45%; /* hue stripe of a weak tile */
+  --tile-border: rgba(18, 26, 38, 0.25);
+  --tile-inset: rgba(255, 255, 255, 0.35);
+  --bad-fill: #8e3b46; /* refuted/contradicted tile fill; white text on top */
+  --button-hover: #22304a;
+  --row-selected-bg: #eef2f8;
+  --warnbox-bg: #f8e9eb;
+  --remediation-bg: #f1ebdc;
+  --refute-bg: #fbf3f4;
+  --chip-fresh-bg: #dcebe6;
+  --chip-aging-bg: #f1e6cf;
+  --chip-refutes-bg: #f3d9dc;
+  --chip-supports-bg: #dde6f0;
   --display: 'Fraunces', Georgia, serif;
   --body: 'Public Sans', system-ui, sans-serif;
   --tile: 62px;
+}
+/* Dark scheme. Function hues are lightened because they are text in .fn/.row__code; tile fills mix a smaller share of
+   the hue towards a dark --tile-base so the near-white ink stays ≥ 4.5:1 on every sufficient/partial/weak fill. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #141821;
+    --paper: #1c222d;
+    --ink: #f0f3f7;
+    --ink-2: #bcc5d1;
+    --ink-3: #9fabba;
+    --line: #3a4453;
+    --stone: #2d3542;
+    --stone-2: #4e5a6d;
+    --focus: #8ab8ff;
+    --gv: #aa9bd9;
+    --id: #74a6d6;
+    --pr: #62b096;
+    --de: #b07a1f; /* tile fill only */
+    --de-text: #e3b25c;
+    --rs: #ea9ba6;
+    --rc: #93b065;
+    --bad: #ea9ba6;
+    --warn: #96630f; /* borders/fills only: ≥ 3:1 against dark paper as a border, and --ink stays ≥ 4.5:1 on accepted-risk stripes */
+    --warn-text: #e3b25c;
+    --good: #62b096;
+    --tile-base: #161a22;
+    --tile-mix: 50%;
+    --tile-mix-partial: 44%;
+    --tile-mix-faint: 10%;
+    --tile-mix-weak: 40%;
+    --tile-border: rgba(240, 243, 247, 0.28);
+    --tile-inset: rgba(0, 0, 0, 0.35);
+    --bad-fill: #7a2f3a;
+    --button-hover: #d9dfe8;
+    --row-selected-bg: #28334a;
+    --warnbox-bg: #3b2127;
+    --remediation-bg: #33301f;
+    --refute-bg: #2b1f23;
+    --chip-fresh-bg: #1b3029;
+    --chip-aging-bg: #3b3120;
+    --chip-refutes-bg: #3a1f25;
+    --chip-supports-bg: #22344a;
+  }
 }
 * { box-sizing: border-box; }
 html { background: var(--ground); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.45; }
@@ -36,7 +100,8 @@ h4 { font-size: 0.95rem; }
 p { margin: 0.25rem 0; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { background: var(--ink); color: var(--paper); border: 1px solid var(--ink); border-radius: 4px; padding: 0.45rem 0.8rem; cursor: pointer; }
-button:hover { background: #22304a; }
+/* :where() keeps the hover fill at element specificity so patterned tiles (.pat--*) never lose their status fill on hover. */
+button:where(:hover) { background: var(--button-hover); }
 button.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
 button.ghost:hover { background: var(--paper); }
 button.small { padding: 0.25rem 0.5rem; font-size: 0.85rem; }
@@ -46,6 +111,8 @@ input, select, textarea { background: var(--paper); border: 1px solid var(--line
 label > span { display: block; font-size: 0.8rem; color: var(--ink-2); margin-bottom: 0.15rem; }
 .skip { position: absolute; left: 0.5rem; top: 0.5rem; transform: translateY(-300%); background: var(--ink); color: var(--paper); padding: 0.5rem; z-index: 10; }
 .skip:focus { transform: none; }
+/* Visually hidden, still read by assistive technology (keyboard hints, labels). */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 .muted { color: var(--ink-3); }
 .small { font-size: 0.82rem; }
 .eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-2); }
@@ -79,29 +146,34 @@ label > span { display: block; font-size: 0.8rem; color: var(--ink-2); margin-bo
 .cat__label { font-size: 0.72rem; letter-spacing: 0.06em; color: var(--ink-3); margin-bottom: 0.25rem; }
 .cat__tiles { display: flex; gap: 6px; }
 
-.tile { position: relative; width: var(--tile); height: var(--tile); border: 1px solid rgba(18, 26, 38, 0.25); border-radius: 3px; padding: 0; color: var(--ink);
-  display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 1.05rem; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+.tile { position: relative; width: var(--tile); height: var(--tile); border: 1px solid var(--tile-border); border-radius: 3px; padding: 0; color: var(--ink);
+  display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 1.05rem; box-shadow: inset 0 0 0 1px var(--tile-inset);
   transition: transform 160ms ease, box-shadow 160ms ease; }
-.tile:hover { background-color: unset; }
+.tile:hover { box-shadow: inset 0 0 0 1px var(--tile-inset), 0 3px 0 -1px var(--fnc); }
 .tile.is-selected { transform: translateY(-3px); box-shadow: 0 6px 0 -2px var(--fnc), 0 8px 14px rgba(18, 26, 38, 0.25); outline: 2px solid var(--ink); outline-offset: 1px; }
 .tile__id { position: relative; z-index: 1; }
 .tile__prio { position: absolute; left: 5px; bottom: 3px; font-size: 0.45rem; letter-spacing: 1px; color: var(--ink-2); }
 .tile__warn { position: absolute; right: 4px; top: 1px; font-size: 0.8rem; font-weight: 700; color: var(--bad); }
 .tile--legend { width: 30px; height: 30px; font-size: 0; --fnc: var(--id); }
 
-/* Status patterns. fnc = function hue. */
-.pat--sufficient { background: color-mix(in srgb, var(--fnc) 72%, white); }
-.pat--partial { background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--fnc) 62%, white) 0 7px, color-mix(in srgb, var(--fnc) 25%, white) 7px 14px); }
-.pat--weak { background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--fnc) 45%, white) 0 3px, var(--paper) 3px 9px); }
+/* Status patterns. fnc = function hue; fills mix the hue towards --tile-base by the per-scheme --tile-mix* shares. */
+.pat--sufficient { background: color-mix(in srgb, var(--fnc) var(--tile-mix), var(--tile-base)); }
+.pat--partial { background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--fnc) var(--tile-mix-partial), var(--tile-base)) 0 7px, color-mix(in srgb, var(--fnc) var(--tile-mix-faint), var(--tile-base)) 7px 14px); }
+.pat--weak { background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--fnc) var(--tile-mix-weak), var(--tile-base)) 0 3px, var(--paper) 3px 9px); }
 .pat--none { background: radial-gradient(circle at 50% 50%, var(--stone-2) 1.4px, transparent 1.6px) 0 0 / 8px 8px, var(--ground); color: var(--ink-2); }
-.pat--contradicted { background: repeating-linear-gradient(45deg, var(--bad) 0 3px, transparent 3px 10px), repeating-linear-gradient(-45deg, var(--bad) 0 3px, #f3d9dc 3px 10px); color: #fff; text-shadow: 0 0 3px var(--ink); }
-.pat--refuted { background: var(--bad); color: #fff; }
+.pat--contradicted { background: repeating-linear-gradient(45deg, var(--bad-fill) 0 3px, transparent 3px 10px), repeating-linear-gradient(-45deg, var(--bad-fill) 0 3px, var(--chip-refutes-bg) 3px 10px); color: #fff; text-shadow: 0 0 3px var(--bad-fill); }
+.pat--refuted { background: var(--bad-fill); color: #fff; }
 .pat--accepted-risk { background: repeating-linear-gradient(135deg, var(--warn) 0 4px, var(--paper) 4px 12px); color: var(--ink); }
-.pat--not-applicable { background: repeating-linear-gradient(0deg, var(--stone) 0 2px, var(--paper) 2px 10px); color: var(--ink-3); }
+.pat--not-applicable { background: repeating-linear-gradient(0deg, var(--stone) 0 2px, var(--paper) 2px 10px); color: var(--ink-2); }
 
 .legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin: 0.9rem 0 0; font-size: 0.82rem; color: var(--ink-2); }
 .legend__item { display: flex; gap: 0.5rem; align-items: center; }
 .legend dt, .legend dd { margin: 0; }
+.legend__heading { margin: 0.8rem 0 0; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); }
+.legend--functions { margin-top: 0.3rem; }
+.legend--functions dt { display: flex; align-items: center; gap: 0.3rem; }
+.legend__swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; background: var(--fnc); border: 1px solid var(--tile-border); }
+.legend__swatch.fn--DE { --fnc: var(--de); } /* the swatch shows the Detect tile fill; the DE text beside it keeps the text-safe ochre */
 
 /* Drawer */
 .drawer { background: var(--paper); border: 1px solid var(--line); padding: 1rem 1.1rem 1.25rem; display: grid; gap: 1rem; position: sticky; top: 0.75rem; max-height: calc(100vh - 1.5rem); overflow: auto; }
@@ -123,22 +195,22 @@ label > span { display: block; font-size: 0.8rem; color: var(--ink-2); margin-bo
 .band--low { color: var(--good); }
 .band--moderate { color: var(--warn-text); }
 .band--high { color: var(--bad); } .band--not-assessed { color: var(--ink-3); font-weight: 500; }
-.warnbox { background: #f8e9eb; border-left: 4px solid var(--bad); padding: 0.6rem 0.8rem; }
+.warnbox { background: var(--warnbox-bg); border-left: 4px solid var(--bad); padding: 0.6rem 0.8rem; }
 .warnbox ul { margin: 0.25rem 0 0; padding-left: 1.2rem; }
-.remediation { background: #f1ebdc; border-left: 4px solid var(--warn); padding: 0.6rem 0.8rem; }
+.remediation { background: var(--remediation-bg); border-left: 4px solid var(--warn); padding: 0.6rem 0.8rem; }
 .trace summary { cursor: pointer; font-weight: 600; }
 .trace ol { margin: 0.5rem 0 0; padding-left: 1.3rem; font-size: 0.88rem; color: var(--ink-2); }
 .trace li { margin-bottom: 0.2rem; }
 .evlist { list-style: none; margin: 0.5rem 0 0; padding: 0; display: grid; gap: 0.5rem; }
 .ev { border: 1px solid var(--line); border-left-width: 4px; padding: 0.55rem 0.7rem; display: grid; gap: 0.2rem; }
 .ev--fresh { border-left-color: var(--good); } .ev--aging { border-left-color: var(--warn); } .ev--stale { border-left-color: var(--stone-2); }
-.ev--refutes { border-left-color: var(--bad); background: #fbf3f4; }
+.ev--refutes { border-left-color: var(--bad); background: var(--refute-bg); }
 .ev__head { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
 .ev__id { font-family: var(--display); font-weight: 700; }
 .ev__note { font-size: 0.85rem; color: var(--ink-2); font-style: italic; }
 .chip { font-size: 0.72rem; padding: 0.05rem 0.45rem; border-radius: 999px; background: var(--ground); color: var(--ink-2); }
-.chip--fresh { background: #dcebe6; color: var(--good); } .chip--aging { background: #f1e6cf; color: var(--warn-text); } .chip--stale { background: var(--stone); color: var(--ink-2); }
-.chip--refutes { background: #f3d9dc; color: var(--bad); } .chip--supports { background: #dde6f0; color: var(--id); }
+.chip--fresh { background: var(--chip-fresh-bg); color: var(--good); } .chip--aging { background: var(--chip-aging-bg); color: var(--warn-text); } .chip--stale { background: var(--stone); color: var(--ink-2); }
+.chip--refutes { background: var(--chip-refutes-bg); color: var(--bad); } .chip--supports { background: var(--chip-supports-bg); color: var(--id); }
 .addform, .decision { border-top: 1px dashed var(--line); padding-top: 0.8rem; display: grid; gap: 0.6rem; }
 .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.5rem; }
 .field-error { color: var(--bad); font-size: 0.88rem; }
@@ -151,7 +223,7 @@ label > span { display: block; font-size: 0.8rem; color: var(--ink-2); margin-bo
 table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
 th, td { text-align: left; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
-tr.is-selected td { background: #eef2f8; }
+tr.is-selected td { background: var(--row-selected-bg); }
 td.remed { max-width: 48ch; color: var(--ink-2); }
 .foot { margin-top: 2rem; color: var(--ink-3); font-size: 0.82rem; border-top: 1px solid var(--line); padding-top: 0.75rem; }
 
@@ -170,4 +242,64 @@ td.remed { max-width: 48ch; color: var(--ink-2); }
 @media (prefers-reduced-motion: reduce) {
   .tile { transition: none; }
   .tile.is-selected { transform: none; }
+}
+
+/* Print: black on white regardless of the OS scheme, forms and controls hidden, patterns kept, register on its own page. */
+@media print {
+  :root {
+    color-scheme: light;
+    --ground: #ffffff;
+    --paper: #ffffff;
+    --ink: #000000;
+    --ink-2: #1f2633;
+    --ink-3: #333c4a;
+    --line: #9aa3ad;
+    --stone: #cbd2da;
+    --stone-2: #8e98a5;
+    --focus: #1f5fbf;
+    --gv: #5b4b8a;
+    --id: #2d5f8b;
+    --pr: #276b5c;
+    --de: #b07a1f;
+    --de-text: #8a5a10;
+    --rs: #8e3b46;
+    --rc: #4f6a2c;
+    --bad: #8e3b46;
+    --warn: #b07a1f;
+    --warn-text: #8a5a10;
+    --good: #276b5c;
+    --tile-base: #ffffff;
+    --tile-mix: 72%;
+    --tile-mix-partial: 62%;
+    --tile-mix-faint: 25%;
+    --tile-mix-weak: 45%;
+    --tile-border: rgba(0, 0, 0, 0.6);
+    --tile-inset: rgba(255, 255, 255, 0.35);
+    --bad-fill: #8e3b46;
+    --button-hover: #22304a;
+    --row-selected-bg: #eef2f8;
+    --warnbox-bg: #f8e9eb;
+    --remediation-bg: #f1ebdc;
+    --refute-bg: #fbf3f4;
+    --chip-fresh-bg: #dcebe6;
+    --chip-aging-bg: #f1e6cf;
+    --chip-refutes-bg: #f3d9dc;
+    --chip-supports-bg: #dde6f0;
+  }
+  .skip, .profile__actions, form.addform, form.decision, .notice, button:not(.tile):not(.linkish),
+  [class^="session__"], [class*=" session__"], [class^="exports__"], [class*=" exports__"], [class^="policy__"], [class*=" policy__"] { display: none; }
+  /* Outcome ids in the register are .linkish buttons and sortable column headers are buttons: keep them as plain text. */
+  th button:not(.tile):not(.linkish) { display: inline; background: none; border: 0; padding: 0; color: inherit; }
+  button.linkish { text-decoration: none; }
+  .app { max-width: none; padding: 0; }
+  .workbench { grid-template-columns: 1fr; gap: 1rem; }
+  .drawer { position: static; max-height: none; overflow: visible; break-inside: avoid; }
+  details.trace[open] > ol { display: block; }
+  .tile, [class*="pat--"], .legend__swatch { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .tile { transition: none; }
+  .tile.is-selected { transform: none; box-shadow: none; }
+  .row, .ev, .legend-block { break-inside: avoid; }
+  .gaps { break-before: page; }
+  tr { break-inside: avoid; }
+  .table-wrap { overflow: visible; }
 }

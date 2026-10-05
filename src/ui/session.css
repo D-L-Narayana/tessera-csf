@@ -1,0 +1,31 @@
+/* Session toolbar: undo/redo, export status, opt-in browser persistence.
+   Uses only the tokens defined in styles.css; status is carried by text, colour is reinforcement. */
+.session__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.session__group { display: flex; gap: 0.4rem; }
+.session__status { margin: 0; font-weight: 600; }
+.session__status--dirty { color: var(--warn-text); }
+.session__status--clean { color: var(--good); }
+.session__persist {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  margin-left: auto;
+}
+.session__persist input[type='checkbox'] { width: auto; margin: 0; accent-color: var(--focus); }
+.session__persist label { font-size: 0.9rem; }
+.session__error { color: var(--bad); }
+.session__privacy { flex-basis: 100%; margin: 0; }
+
+@media (max-width: 600px) {
+  .session__persist { margin-left: 0; }
+}

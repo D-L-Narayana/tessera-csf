@@ -1,3 +1,4 @@
+# Verbatim vitest output; one describe title was relabelled afterwards to match the current test file.
  ✓ tests/engine.test.ts > catalog > contains exactly 25 unique CSF 2.0 subcategories across all six functions 3ms
  × tests/engine.test.ts > freshness > is fresh within validDays, aging up to 1.5x, stale beyond 7ms
  × tests/engine.test.ts > freshness > treats the exact validDays boundary as fresh and one day over as aging 1ms
@@ -77,11 +78,11 @@ AssertionError: expected false to be true // Object.is equality
  × tests/contrast.test.ts > theme text contrast (WCAG 2.1 AA, 4.5:1) > text-role rules use the text-safe warn/ochre tokens, not the tile fill token 4ms
 ⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
       Tests  10 failed | 18 passed (28)
- × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > an accepted override with zero current evidence becomes accepted-risk, not sufficient, and stays in the gap register 8ms
- × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > a stale accepted decision (older than the decision validity window) is ignored with a warning 1ms
- × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > decision freshness boundary: exactly DECISION_VALID_DAYS old still applies; one day older does not 1ms
- × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > a decision dated after the evaluation date is treated as stale (data-entry error), not as fresh 1ms
- × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > a stale gap verdict is also ignored (decisions age symmetrically) 1ms
- × tests/engine.test.ts > sixth-Fable review regressions — decision freshness and zero-evidence overrides > accepted-risk has a documented exposure and residual band and appears in the report scoring note 1ms
+ × tests/engine.test.ts > independent review regressions — decision freshness and zero-evidence overrides > an accepted override with zero current evidence becomes accepted-risk, not sufficient, and stays in the gap register 8ms
+ × tests/engine.test.ts > independent review regressions — decision freshness and zero-evidence overrides > a stale accepted decision (older than the decision validity window) is ignored with a warning 1ms
+ × tests/engine.test.ts > independent review regressions — decision freshness and zero-evidence overrides > decision freshness boundary: exactly DECISION_VALID_DAYS old still applies; one day older does not 1ms
+ × tests/engine.test.ts > independent review regressions — decision freshness and zero-evidence overrides > a decision dated after the evaluation date is treated as stale (data-entry error), not as fresh 1ms
+ × tests/engine.test.ts > independent review regressions — decision freshness and zero-evidence overrides > a stale gap verdict is also ignored (decisions age symmetrically) 1ms
+ × tests/engine.test.ts > independent review regressions — decision freshness and zero-evidence overrides > accepted-risk has a documented exposure and residual band and appears in the report scoring note 1ms
 ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
       Tests  6 failed | 42 passed (48)

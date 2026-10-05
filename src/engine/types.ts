@@ -1,4 +1,5 @@
 // Tessera engine types. Pure data; no DOM.
+import type { RulePolicy } from './policy';
 
 export type CsfFunction = 'GV' | 'ID' | 'PR' | 'DE' | 'RS' | 'RC';
 
@@ -41,6 +42,7 @@ export interface Evidence {
   assertion: 'supports' | 'refutes';
   source: string; // synthetic system name, e.g. "idp.example"
   note?: string;
+  collectedBy?: string; // optional: who collected/produced the artifact; enables the separation-of-duties guardrail
 }
 
 export type Verdict = 'accepted' | 'gap' | 'needs-more' | 'not-applicable';
@@ -67,6 +69,7 @@ export interface EvidencePack {
   profile: Profile;
   evidence: Evidence[];
   decisions: Decision[];
+  policy?: RulePolicy; // optional rule policy (tessera.policy/1); absent means DEFAULT_POLICY
 }
 
 export type Freshness = 'fresh' | 'aging' | 'stale';
@@ -104,8 +107,9 @@ export interface SubcategoryResult {
   band: RiskBand;
   override: boolean; // reviewer accepted despite weak computed status
   overrideValid: boolean; // rationale long enough
+  overrideIssue?: 'short-rationale' | 'self-review'; // why an accepted override was refused (absent when valid or not an override)
   decision?: Decision;
-  decisionAgeDays?: number; // age of the decision at asOf; decisions older than DECISION_VALID_DAYS are ignored
+  decisionAgeDays?: number; // age of the decision at asOf; decisions older than policy.decisionValidDays are ignored
   reasons: string[]; // human readable trace of how status was derived
   warnings: string[]; // reviewer actions that were refused or need attention
   remediation?: string;
@@ -133,6 +137,8 @@ export interface Report {
   scoringNote: string;
   decisionPolicy: string;
   disclaimer: string;
+  policy: RulePolicy; // the rule policy this report was computed with, so it stays reproducible
+  policyIsDefault: boolean;
 }
 
 export interface ValidationIssue {

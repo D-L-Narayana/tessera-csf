@@ -11,8 +11,11 @@
       "scrollWidth": 1440,
       "headings": [
         "Tessera",
+        "Summary",
         "Outcome mosaic",
         "PR.DS-11",
+        "Horizon",
+        "Compare with a previous report",
         "Gap register"
       ],
       "primaryControls": [
@@ -78,157 +81,235 @@
         },
         {
           "tag": "BUTTON",
-          "text": "GV.OC-03: weak, residual 1.60 (moderate), priority 2",
+          "text": "Export gap register CSV",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.RM-02: none, residual 1.00 (moderate), priority 1, has reviewer warning",
+          "text": "Export evidence inventory CSV",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.RR-02: partial, residual 1.00 (moderate), priority 2",
+          "text": "Export summary (Markdown)",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.PO-01: partial, residual 1.00 (moderate), priority 2, has reviewer warning",
+          "text": "Undo",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.SC-04: weak, residual 1.60 (moderate), priority 2",
+          "text": "Redo",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_0_"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-agingMultiplier"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-decisionValidDays"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minOverrideRationale"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-sufficientCoverage"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minDistinctTypes"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_4_-sod"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Reset to defaults",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.SC-07: weak, residual 1.60 (moderate), priority 2",
+          "text": "03●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.AM-01: sufficient, residual 0.30 (low), priority 2",
+          "text": "02●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.AM-02: sufficient, residual 0.30 (low), priority 2",
+          "text": "02●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.RA-01: none, residual 3.00 (high), priority 3",
+          "text": "01●●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.RA-05: none, residual 2.00 (high), priority 2",
+          "text": "04●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.IM-02: partial, residual 1.00 (moderate), priority 2",
+          "text": "07●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.AA-01: sufficient, residual 0.30 (low), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.AA-05: sufficient, residual 0.45 (low), priority 3",
+          "text": "02●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.AT-01: partial, residual 0.50 (low), priority 1",
+          "text": "01●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.DS-01: partial, residual 1.00 (moderate), priority 2",
+          "text": "05●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.DS-11: contradicted, residual 3.00 (high), priority 3, has reviewer warning",
+          "text": "02●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.PS-01: none, residual 2.00 (high), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.PS-02: sufficient, residual 0.45 (low), priority 3",
+          "text": "05●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.IR-01: weak, residual 1.60 (moderate), priority 2",
+          "text": "01●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "DE.CM-01: none, residual 3.00 (high), priority 3",
+          "text": "01●●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "DE.AE-02: none, residual 2.00 (high), priority 2",
+          "text": "11●●●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RS.MA-01: sufficient, residual 0.30 (low), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RS.AN-03: partial, residual 1.00 (moderate), priority 2",
+          "text": "02●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RC.RP-01: none, residual 2.00 (high), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RC.CO-03: accepted-risk, residual 0.60 (low), priority 1",
+          "text": "01●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "Close outcome details",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Close",
           "type": "button",
           "id": ""
         },
@@ -236,11 +317,23 @@
           "tag": "SELECT",
           "text": "1 — low2 — standard3 — critical outcome",
           "type": null,
-          "id": "prio"
+          "id": "_r_5_"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Edit EV-004",
+          "type": "button",
+          "id": ""
         },
         {
           "tag": "BUTTON",
           "text": "Remove EV-004",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Edit EV-005",
           "type": "button",
           "id": ""
         },
@@ -254,43 +347,199 @@
           "tag": "INPUT",
           "text": "",
           "type": null,
-          "id": ""
+          "id": "_r_7_-title"
         },
         {
           "tag": "INPUT",
           "text": "",
           "type": null,
-          "id": ""
+          "id": "_r_7_-source"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-collectedBy"
         },
         {
           "tag": "SELECT",
           "text": "policyprocedureconfigurationlog-samplereportattestationticket",
           "type": null,
-          "id": ""
+          "id": "_r_7_-type"
         },
         {
           "tag": "INPUT",
           "text": "",
           "type": "date",
-          "id": ""
+          "id": "_r_7_-collectedOn"
         },
         {
           "tag": "INPUT",
           "text": "",
           "type": "number",
-          "id": ""
+          "id": "_r_7_-validDays"
         },
         {
           "tag": "SELECT",
           "text": "fullpartial",
           "type": null,
-          "id": ""
+          "id": "_r_7_-scope"
         },
         {
           "tag": "SELECT",
           "text": "supports the outcomerefutes the outcome",
           "type": null,
-          "id": ""
+          "id": "_r_7_-assertion"
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-note"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.OC-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RR-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.PO-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-04"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-07"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.IM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AT-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.DS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.IR-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.CM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.AE-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.MA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.AN-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RC.RP-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RC.CO-03"
         },
         {
           "tag": "BUTTON",
@@ -302,19 +551,19 @@
           "tag": "INPUT",
           "text": "",
           "type": null,
-          "id": ""
+          "id": "_r_8_-reviewer"
         },
         {
           "tag": "SELECT",
           "text": "accepted — evidence is adequateneeds more — hold at partialgap — mark weak regardless of evidencenot",
           "type": null,
-          "id": ""
+          "id": "_r_8_-verdict"
         },
         {
           "tag": "TEXTAREA",
           "text": "Backups are configured and encrypted; the restore failures are being worked in CHG-4420 so I conside",
           "type": null,
-          "id": ""
+          "id": "_r_8_-rationale"
         },
         {
           "tag": "BUTTON",
@@ -325,6 +574,150 @@
         {
           "tag": "BUTTON",
           "text": "Clear decision",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "306090180",
+          "type": null,
+          "id": "_r_a_"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-002 Q2 access recertification report (finance apps) for PR.AA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-015 Top-10 supplier risk review for GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-007 Monthly patch compliance report for PR.PS-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-012 Hardware asset export (MDM) for ID.AM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-011 Regulatory obligations register for GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-004 Backup job configuration (nightly, encrypted) for PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-003 IdP MFA enforcement export for PR.AA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-020 Encryption-at-rest configuration (object storage) for PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-02 sufficient → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-05 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-01 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01 partial → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03 weak → none",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import previous report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "AllGV — GovernID — IdentifyPR — ProtectDE — DetectRS — RespondRC — Recover",
+          "type": null,
+          "id": "_r_g_-fn"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Allsufficientpartialweaknonecontradictedrefutedaccepted-risknot-applicable",
+          "type": null,
+          "id": "_r_g_-status"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Alllowmoderatehigh",
+          "type": null,
+          "id": "_r_g_-band"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "search",
+          "id": "_r_g_-query"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_g_-closed"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Outcome↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Status↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Residual▼",
           "type": "button",
           "id": ""
         },
@@ -451,7 +844,18 @@
         "id": "color-contrast",
         "impact": "serious"
       }
-    ]
+    ],
+    "path": "/",
+    "colorScheme": "light",
+    "context": "axe-instrumentation (bypassCSP: true; application CSP unchanged on the server)",
+    "engine": "axe-source: axe.min.js",
+    "axeVersion": "4.13.0",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa"
+    ],
+    "horizontalOverflow": false
   },
   {
     "name": "tablet",
@@ -465,8 +869,11 @@
       "scrollWidth": 768,
       "headings": [
         "Tessera",
+        "Summary",
         "Outcome mosaic",
         "PR.DS-11",
+        "Horizon",
+        "Compare with a previous report",
         "Gap register"
       ],
       "primaryControls": [
@@ -532,157 +939,235 @@
         },
         {
           "tag": "BUTTON",
-          "text": "GV.OC-03: weak, residual 1.60 (moderate), priority 2",
+          "text": "Export gap register CSV",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.RM-02: none, residual 1.00 (moderate), priority 1, has reviewer warning",
+          "text": "Export evidence inventory CSV",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.RR-02: partial, residual 1.00 (moderate), priority 2",
+          "text": "Export summary (Markdown)",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.PO-01: partial, residual 1.00 (moderate), priority 2, has reviewer warning",
+          "text": "Undo",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.SC-04: weak, residual 1.60 (moderate), priority 2",
+          "text": "Redo",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_0_"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-agingMultiplier"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-decisionValidDays"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minOverrideRationale"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-sufficientCoverage"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minDistinctTypes"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_4_-sod"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Reset to defaults",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.SC-07: weak, residual 1.60 (moderate), priority 2",
+          "text": "03●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.AM-01: sufficient, residual 0.30 (low), priority 2",
+          "text": "02●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.AM-02: sufficient, residual 0.30 (low), priority 2",
+          "text": "02●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.RA-01: none, residual 3.00 (high), priority 3",
+          "text": "01●●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.RA-05: none, residual 2.00 (high), priority 2",
+          "text": "04●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.IM-02: partial, residual 1.00 (moderate), priority 2",
+          "text": "07●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.AA-01: sufficient, residual 0.30 (low), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.AA-05: sufficient, residual 0.45 (low), priority 3",
+          "text": "02●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.AT-01: partial, residual 0.50 (low), priority 1",
+          "text": "01●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.DS-01: partial, residual 1.00 (moderate), priority 2",
+          "text": "05●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.DS-11: contradicted, residual 3.00 (high), priority 3, has reviewer warning",
+          "text": "02●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.PS-01: none, residual 2.00 (high), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.PS-02: sufficient, residual 0.45 (low), priority 3",
+          "text": "05●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.IR-01: weak, residual 1.60 (moderate), priority 2",
+          "text": "01●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "DE.CM-01: none, residual 3.00 (high), priority 3",
+          "text": "01●●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "DE.AE-02: none, residual 2.00 (high), priority 2",
+          "text": "11●●●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RS.MA-01: sufficient, residual 0.30 (low), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RS.AN-03: partial, residual 1.00 (moderate), priority 2",
+          "text": "02●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RC.RP-01: none, residual 2.00 (high), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RC.CO-03: accepted-risk, residual 0.60 (low), priority 1",
+          "text": "01●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "Close outcome details",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Close",
           "type": "button",
           "id": ""
         },
@@ -690,11 +1175,23 @@
           "tag": "SELECT",
           "text": "1 — low2 — standard3 — critical outcome",
           "type": null,
-          "id": "prio"
+          "id": "_r_5_"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Edit EV-004",
+          "type": "button",
+          "id": ""
         },
         {
           "tag": "BUTTON",
           "text": "Remove EV-004",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Edit EV-005",
           "type": "button",
           "id": ""
         },
@@ -708,43 +1205,199 @@
           "tag": "INPUT",
           "text": "",
           "type": null,
-          "id": ""
+          "id": "_r_7_-title"
         },
         {
           "tag": "INPUT",
           "text": "",
           "type": null,
-          "id": ""
+          "id": "_r_7_-source"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-collectedBy"
         },
         {
           "tag": "SELECT",
           "text": "policyprocedureconfigurationlog-samplereportattestationticket",
           "type": null,
-          "id": ""
+          "id": "_r_7_-type"
         },
         {
           "tag": "INPUT",
           "text": "",
           "type": "date",
-          "id": ""
+          "id": "_r_7_-collectedOn"
         },
         {
           "tag": "INPUT",
           "text": "",
           "type": "number",
-          "id": ""
+          "id": "_r_7_-validDays"
         },
         {
           "tag": "SELECT",
           "text": "fullpartial",
           "type": null,
-          "id": ""
+          "id": "_r_7_-scope"
         },
         {
           "tag": "SELECT",
           "text": "supports the outcomerefutes the outcome",
           "type": null,
-          "id": ""
+          "id": "_r_7_-assertion"
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-note"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.OC-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RR-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.PO-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-04"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-07"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.IM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AT-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.DS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.IR-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.CM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.AE-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.MA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.AN-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RC.RP-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RC.CO-03"
         },
         {
           "tag": "BUTTON",
@@ -756,19 +1409,19 @@
           "tag": "INPUT",
           "text": "",
           "type": null,
-          "id": ""
+          "id": "_r_8_-reviewer"
         },
         {
           "tag": "SELECT",
           "text": "accepted — evidence is adequateneeds more — hold at partialgap — mark weak regardless of evidencenot",
           "type": null,
-          "id": ""
+          "id": "_r_8_-verdict"
         },
         {
           "tag": "TEXTAREA",
           "text": "Backups are configured and encrypted; the restore failures are being worked in CHG-4420 so I conside",
           "type": null,
-          "id": ""
+          "id": "_r_8_-rationale"
         },
         {
           "tag": "BUTTON",
@@ -779,6 +1432,150 @@
         {
           "tag": "BUTTON",
           "text": "Clear decision",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "306090180",
+          "type": null,
+          "id": "_r_a_"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-002 Q2 access recertification report (finance apps) for PR.AA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-015 Top-10 supplier risk review for GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-007 Monthly patch compliance report for PR.PS-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-012 Hardware asset export (MDM) for ID.AM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-011 Regulatory obligations register for GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-004 Backup job configuration (nightly, encrypted) for PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-003 IdP MFA enforcement export for PR.AA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-020 Encryption-at-rest configuration (object storage) for PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-02 sufficient → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-05 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-01 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01 partial → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03 weak → none",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import previous report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "AllGV — GovernID — IdentifyPR — ProtectDE — DetectRS — RespondRC — Recover",
+          "type": null,
+          "id": "_r_g_-fn"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Allsufficientpartialweaknonecontradictedrefutedaccepted-risknot-applicable",
+          "type": null,
+          "id": "_r_g_-status"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Alllowmoderatehigh",
+          "type": null,
+          "id": "_r_g_-band"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "search",
+          "id": "_r_g_-query"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_g_-closed"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Outcome↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Status↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Residual▼",
           "type": "button",
           "id": ""
         },
@@ -905,7 +1702,18 @@
         "id": "color-contrast",
         "impact": "serious"
       }
-    ]
+    ],
+    "path": "/",
+    "colorScheme": "light",
+    "context": "axe-instrumentation (bypassCSP: true; application CSP unchanged on the server)",
+    "engine": "axe-source: axe.min.js",
+    "axeVersion": "4.13.0",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa"
+    ],
+    "horizontalOverflow": false
   },
   {
     "name": "mobile",
@@ -919,8 +1727,11 @@
       "scrollWidth": 375,
       "headings": [
         "Tessera",
+        "Summary",
         "Outcome mosaic",
         "PR.DS-11",
+        "Horizon",
+        "Compare with a previous report",
         "Gap register"
       ],
       "primaryControls": [
@@ -986,157 +1797,235 @@
         },
         {
           "tag": "BUTTON",
-          "text": "GV.OC-03: weak, residual 1.60 (moderate), priority 2",
+          "text": "Export gap register CSV",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.RM-02: none, residual 1.00 (moderate), priority 1, has reviewer warning",
+          "text": "Export evidence inventory CSV",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.RR-02: partial, residual 1.00 (moderate), priority 2",
+          "text": "Export summary (Markdown)",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.PO-01: partial, residual 1.00 (moderate), priority 2, has reviewer warning",
+          "text": "Undo",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.SC-04: weak, residual 1.60 (moderate), priority 2",
+          "text": "Redo",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_0_"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-agingMultiplier"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-decisionValidDays"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minOverrideRationale"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-sufficientCoverage"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minDistinctTypes"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_4_-sod"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Reset to defaults",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "GV.SC-07: weak, residual 1.60 (moderate), priority 2",
+          "text": "03●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.AM-01: sufficient, residual 0.30 (low), priority 2",
+          "text": "02●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.AM-02: sufficient, residual 0.30 (low), priority 2",
+          "text": "02●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.RA-01: none, residual 3.00 (high), priority 3",
+          "text": "01●●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.RA-05: none, residual 2.00 (high), priority 2",
+          "text": "04●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "ID.IM-02: partial, residual 1.00 (moderate), priority 2",
+          "text": "07●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.AA-01: sufficient, residual 0.30 (low), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.AA-05: sufficient, residual 0.45 (low), priority 3",
+          "text": "02●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.AT-01: partial, residual 0.50 (low), priority 1",
+          "text": "01●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.DS-01: partial, residual 1.00 (moderate), priority 2",
+          "text": "05●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.DS-11: contradicted, residual 3.00 (high), priority 3, has reviewer warning",
+          "text": "02●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.PS-01: none, residual 2.00 (high), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.PS-02: sufficient, residual 0.45 (low), priority 3",
+          "text": "05●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "PR.IR-01: weak, residual 1.60 (moderate), priority 2",
+          "text": "01●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "DE.CM-01: none, residual 3.00 (high), priority 3",
+          "text": "01●●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "DE.AE-02: none, residual 2.00 (high), priority 2",
+          "text": "11●●●!",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RS.MA-01: sufficient, residual 0.30 (low), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RS.AN-03: partial, residual 1.00 (moderate), priority 2",
+          "text": "02●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RC.RP-01: none, residual 2.00 (high), priority 2",
+          "text": "01●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "RC.CO-03: accepted-risk, residual 0.60 (low), priority 1",
+          "text": "01●●●",
           "type": "button",
           "id": ""
         },
         {
           "tag": "BUTTON",
-          "text": "Close outcome details",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Close",
           "type": "button",
           "id": ""
         },
@@ -1144,11 +2033,23 @@
           "tag": "SELECT",
           "text": "1 — low2 — standard3 — critical outcome",
           "type": null,
-          "id": "prio"
+          "id": "_r_5_"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Edit EV-004",
+          "type": "button",
+          "id": ""
         },
         {
           "tag": "BUTTON",
           "text": "Remove EV-004",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Edit EV-005",
           "type": "button",
           "id": ""
         },
@@ -1162,43 +2063,199 @@
           "tag": "INPUT",
           "text": "",
           "type": null,
-          "id": ""
+          "id": "_r_7_-title"
         },
         {
           "tag": "INPUT",
           "text": "",
           "type": null,
-          "id": ""
+          "id": "_r_7_-source"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-collectedBy"
         },
         {
           "tag": "SELECT",
           "text": "policyprocedureconfigurationlog-samplereportattestationticket",
           "type": null,
-          "id": ""
+          "id": "_r_7_-type"
         },
         {
           "tag": "INPUT",
           "text": "",
           "type": "date",
-          "id": ""
+          "id": "_r_7_-collectedOn"
         },
         {
           "tag": "INPUT",
           "text": "",
           "type": "number",
-          "id": ""
+          "id": "_r_7_-validDays"
         },
         {
           "tag": "SELECT",
           "text": "fullpartial",
           "type": null,
-          "id": ""
+          "id": "_r_7_-scope"
         },
         {
           "tag": "SELECT",
           "text": "supports the outcomerefutes the outcome",
           "type": null,
-          "id": ""
+          "id": "_r_7_-assertion"
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-note"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.OC-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RR-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.PO-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-04"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-07"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.IM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AT-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.DS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.IR-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.CM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.AE-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.MA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.AN-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RC.RP-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RC.CO-03"
         },
         {
           "tag": "BUTTON",
@@ -1210,19 +2267,19 @@
           "tag": "INPUT",
           "text": "",
           "type": null,
-          "id": ""
+          "id": "_r_8_-reviewer"
         },
         {
           "tag": "SELECT",
           "text": "accepted — evidence is adequateneeds more — hold at partialgap — mark weak regardless of evidencenot",
           "type": null,
-          "id": ""
+          "id": "_r_8_-verdict"
         },
         {
           "tag": "TEXTAREA",
           "text": "Backups are configured and encrypted; the restore failures are being worked in CHG-4420 so I conside",
           "type": null,
-          "id": ""
+          "id": "_r_8_-rationale"
         },
         {
           "tag": "BUTTON",
@@ -1233,6 +2290,150 @@
         {
           "tag": "BUTTON",
           "text": "Clear decision",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "306090180",
+          "type": null,
+          "id": "_r_a_"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-002 Q2 access recertification report (finance apps) for PR.AA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-015 Top-10 supplier risk review for GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-007 Monthly patch compliance report for PR.PS-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-012 Hardware asset export (MDM) for ID.AM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-011 Regulatory obligations register for GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-004 Backup job configuration (nightly, encrypted) for PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-003 IdP MFA enforcement export for PR.AA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-020 Encryption-at-rest configuration (object storage) for PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-02 sufficient → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-05 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-01 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01 partial → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03 weak → none",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import previous report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "AllGV — GovernID — IdentifyPR — ProtectDE — DetectRS — RespondRC — Recover",
+          "type": null,
+          "id": "_r_g_-fn"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Allsufficientpartialweaknonecontradictedrefutedaccepted-risknot-applicable",
+          "type": null,
+          "id": "_r_g_-status"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Alllowmoderatehigh",
+          "type": null,
+          "id": "_r_g_-band"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "search",
+          "id": "_r_g_-query"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_g_-closed"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Outcome↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Status↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Residual▼",
           "type": "button",
           "id": ""
         },
@@ -1353,83 +2554,7 @@
       ],
       "overflowing": [
         {
-          "tag": "TABLE",
-          "class": ""
-        },
-        {
-          "tag": "THEAD",
-          "class": ""
-        },
-        {
-          "tag": "TR",
-          "class": ""
-        },
-        {
           "tag": "TH",
-          "class": ""
-        },
-        {
-          "tag": "TBODY",
-          "class": ""
-        },
-        {
-          "tag": "TR",
-          "class": ""
-        },
-        {
-          "tag": "TD",
-          "class": "remed"
-        },
-        {
-          "tag": "TR",
-          "class": ""
-        },
-        {
-          "tag": "TD",
-          "class": "remed"
-        },
-        {
-          "tag": "TR",
-          "class": "is-selected"
-        },
-        {
-          "tag": "TD",
-          "class": "remed"
-        },
-        {
-          "tag": "TR",
-          "class": ""
-        },
-        {
-          "tag": "TD",
-          "class": "remed"
-        },
-        {
-          "tag": "TR",
-          "class": ""
-        },
-        {
-          "tag": "TD",
-          "class": "remed"
-        },
-        {
-          "tag": "TR",
-          "class": ""
-        },
-        {
-          "tag": "TD",
-          "class": "remed"
-        },
-        {
-          "tag": "TR",
-          "class": ""
-        },
-        {
-          "tag": "TD",
-          "class": "remed"
-        },
-        {
-          "tag": "TR",
           "class": ""
         }
       ]
@@ -1440,6 +2565,2524 @@
         "id": "color-contrast",
         "impact": "serious"
       }
-    ]
+    ],
+    "path": "/",
+    "colorScheme": "light",
+    "context": "axe-instrumentation (bypassCSP: true; application CSP unchanged on the server)",
+    "engine": "axe-source: axe.min.js",
+    "axeVersion": "4.13.0",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa"
+    ],
+    "horizontalOverflow": false
+  },
+  {
+    "name": "desktop-rc-co-03",
+    "status": 200,
+    "url": "http://127.0.0.1:6120/#/RC.CO-03",
+    "errors": [],
+    "failedRequests": [],
+    "layout": {
+      "title": "Tessera — CSF 2.0 outcome-evidence mapper (educational)",
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "headings": [
+        "Tessera",
+        "Summary",
+        "Outcome mosaic",
+        "RC.CO-03",
+        "Horizon",
+        "Compare with a previous report",
+        "Gap register"
+      ],
+      "primaryControls": [
+        {
+          "tag": "A",
+          "text": "Skip to mosaic",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Load demo pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Start empty",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import pack JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export gap register CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export evidence inventory CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export summary (Markdown)",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Undo",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Redo",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_0_"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-agingMultiplier"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-decisionValidDays"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minOverrideRationale"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-sufficientCoverage"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minDistinctTypes"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_4_-sod"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Reset to defaults",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "04●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "07●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "05●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "05●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "11●●●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Close",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "1 — low2 — standard3 — critical outcome",
+          "type": null,
+          "id": "_r_5_"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-title"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-source"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-collectedBy"
+        },
+        {
+          "tag": "SELECT",
+          "text": "policyprocedureconfigurationlog-samplereportattestationticket",
+          "type": null,
+          "id": "_r_7_-type"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": "_r_7_-collectedOn"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_7_-validDays"
+        },
+        {
+          "tag": "SELECT",
+          "text": "fullpartial",
+          "type": null,
+          "id": "_r_7_-scope"
+        },
+        {
+          "tag": "SELECT",
+          "text": "supports the outcomerefutes the outcome",
+          "type": null,
+          "id": "_r_7_-assertion"
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-note"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.OC-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RR-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.PO-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-04"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-07"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.IM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AT-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.DS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.DS-11"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.IR-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.CM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.AE-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.MA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.AN-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RC.RP-01"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add evidence",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_8_-reviewer"
+        },
+        {
+          "tag": "SELECT",
+          "text": "accepted — evidence is adequateneeds more — hold at partialgap — mark weak regardless of evidencenot",
+          "type": null,
+          "id": "_r_8_-verdict"
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "Recovery communications are handled ad hoc by the operations director; accepted for this quarter whi",
+          "type": null,
+          "id": "_r_8_-rationale"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Record decision",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Clear decision",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "306090180",
+          "type": null,
+          "id": "_r_a_"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-002 Q2 access recertification report (finance apps) for PR.AA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-015 Top-10 supplier risk review for GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-007 Monthly patch compliance report for PR.PS-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-012 Hardware asset export (MDM) for ID.AM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-011 Regulatory obligations register for GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-004 Backup job configuration (nightly, encrypted) for PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-003 IdP MFA enforcement export for PR.AA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-020 Encryption-at-rest configuration (object storage) for PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-02 sufficient → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-05 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-01 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01 partial → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03 weak → none",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import previous report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "AllGV — GovernID — IdentifyPR — ProtectDE — DetectRS — RespondRC — Recover",
+          "type": null,
+          "id": "_r_g_-fn"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Allsufficientpartialweaknonecontradictedrefutedaccepted-risknot-applicable",
+          "type": null,
+          "id": "_r_g_-status"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Alllowmoderatehigh",
+          "type": null,
+          "id": "_r_g_-band"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "search",
+          "id": "_r_g_-query"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_g_-closed"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Outcome↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Status↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Residual▼",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.CM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.AE-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.RP-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-04",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.IR-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.PO-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RR-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.IM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.AN-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.CO-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AT-01",
+          "type": "button",
+          "id": ""
+        }
+      ],
+      "overflowing": []
+    },
+    "violations": [],
+    "incompleteChecks": [
+      {
+        "id": "color-contrast",
+        "impact": "serious"
+      }
+    ],
+    "path": "/#/RC.CO-03",
+    "colorScheme": "light",
+    "context": "axe-instrumentation (bypassCSP: true; application CSP unchanged on the server)",
+    "engine": "axe-source: axe.min.js",
+    "axeVersion": "4.13.0",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa"
+    ],
+    "horizontalOverflow": false
+  },
+  {
+    "name": "tablet-rc-co-03",
+    "status": 200,
+    "url": "http://127.0.0.1:6120/#/RC.CO-03",
+    "errors": [],
+    "failedRequests": [],
+    "layout": {
+      "title": "Tessera — CSF 2.0 outcome-evidence mapper (educational)",
+      "viewport": 768,
+      "scrollWidth": 768,
+      "headings": [
+        "Tessera",
+        "Summary",
+        "Outcome mosaic",
+        "RC.CO-03",
+        "Horizon",
+        "Compare with a previous report",
+        "Gap register"
+      ],
+      "primaryControls": [
+        {
+          "tag": "A",
+          "text": "Skip to mosaic",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Load demo pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Start empty",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import pack JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export gap register CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export evidence inventory CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export summary (Markdown)",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Undo",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Redo",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_0_"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-agingMultiplier"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-decisionValidDays"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minOverrideRationale"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-sufficientCoverage"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minDistinctTypes"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_4_-sod"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Reset to defaults",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "04●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "07●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "05●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "05●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "11●●●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Close",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "1 — low2 — standard3 — critical outcome",
+          "type": null,
+          "id": "_r_5_"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-title"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-source"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-collectedBy"
+        },
+        {
+          "tag": "SELECT",
+          "text": "policyprocedureconfigurationlog-samplereportattestationticket",
+          "type": null,
+          "id": "_r_7_-type"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": "_r_7_-collectedOn"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_7_-validDays"
+        },
+        {
+          "tag": "SELECT",
+          "text": "fullpartial",
+          "type": null,
+          "id": "_r_7_-scope"
+        },
+        {
+          "tag": "SELECT",
+          "text": "supports the outcomerefutes the outcome",
+          "type": null,
+          "id": "_r_7_-assertion"
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-note"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.OC-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RR-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.PO-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-04"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-07"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.IM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AT-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.DS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.DS-11"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.IR-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.CM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.AE-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.MA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.AN-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RC.RP-01"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add evidence",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_8_-reviewer"
+        },
+        {
+          "tag": "SELECT",
+          "text": "accepted — evidence is adequateneeds more — hold at partialgap — mark weak regardless of evidencenot",
+          "type": null,
+          "id": "_r_8_-verdict"
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "Recovery communications are handled ad hoc by the operations director; accepted for this quarter whi",
+          "type": null,
+          "id": "_r_8_-rationale"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Record decision",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Clear decision",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "306090180",
+          "type": null,
+          "id": "_r_a_"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-002 Q2 access recertification report (finance apps) for PR.AA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-015 Top-10 supplier risk review for GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-007 Monthly patch compliance report for PR.PS-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-012 Hardware asset export (MDM) for ID.AM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-011 Regulatory obligations register for GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-004 Backup job configuration (nightly, encrypted) for PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-003 IdP MFA enforcement export for PR.AA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-020 Encryption-at-rest configuration (object storage) for PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-02 sufficient → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-05 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-01 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01 partial → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03 weak → none",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import previous report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "AllGV — GovernID — IdentifyPR — ProtectDE — DetectRS — RespondRC — Recover",
+          "type": null,
+          "id": "_r_g_-fn"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Allsufficientpartialweaknonecontradictedrefutedaccepted-risknot-applicable",
+          "type": null,
+          "id": "_r_g_-status"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Alllowmoderatehigh",
+          "type": null,
+          "id": "_r_g_-band"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "search",
+          "id": "_r_g_-query"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_g_-closed"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Outcome↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Status↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Residual▼",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.CM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.AE-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.RP-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-04",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.IR-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.PO-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RR-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.IM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.AN-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.CO-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AT-01",
+          "type": "button",
+          "id": ""
+        }
+      ],
+      "overflowing": []
+    },
+    "violations": [],
+    "incompleteChecks": [
+      {
+        "id": "color-contrast",
+        "impact": "serious"
+      }
+    ],
+    "path": "/#/RC.CO-03",
+    "colorScheme": "light",
+    "context": "axe-instrumentation (bypassCSP: true; application CSP unchanged on the server)",
+    "engine": "axe-source: axe.min.js",
+    "axeVersion": "4.13.0",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa"
+    ],
+    "horizontalOverflow": false
+  },
+  {
+    "name": "mobile-rc-co-03",
+    "status": 200,
+    "url": "http://127.0.0.1:6120/#/RC.CO-03",
+    "errors": [],
+    "failedRequests": [],
+    "layout": {
+      "title": "Tessera — CSF 2.0 outcome-evidence mapper (educational)",
+      "viewport": 375,
+      "scrollWidth": 375,
+      "headings": [
+        "Tessera",
+        "Summary",
+        "Outcome mosaic",
+        "RC.CO-03",
+        "Horizon",
+        "Compare with a previous report",
+        "Gap register"
+      ],
+      "primaryControls": [
+        {
+          "tag": "A",
+          "text": "Skip to mosaic",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Load demo pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Start empty",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import pack JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export pack",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export report CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export gap register CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export evidence inventory CSV",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export summary (Markdown)",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Undo",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Redo",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_0_"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-agingMultiplier"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-decisionValidDays"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minOverrideRationale"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-sufficientCoverage"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_4_-minDistinctTypes"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_4_-sod"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Reset to defaults",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "04●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "07●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "05●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "05●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "11●●●!",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "02●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "01●●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "03●",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Close",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "1 — low2 — standard3 — critical outcome",
+          "type": null,
+          "id": "_r_5_"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-title"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-source"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-collectedBy"
+        },
+        {
+          "tag": "SELECT",
+          "text": "policyprocedureconfigurationlog-samplereportattestationticket",
+          "type": null,
+          "id": "_r_7_-type"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "date",
+          "id": "_r_7_-collectedOn"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "number",
+          "id": "_r_7_-validDays"
+        },
+        {
+          "tag": "SELECT",
+          "text": "fullpartial",
+          "type": null,
+          "id": "_r_7_-scope"
+        },
+        {
+          "tag": "SELECT",
+          "text": "supports the outcomerefutes the outcome",
+          "type": null,
+          "id": "_r_7_-assertion"
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "",
+          "type": null,
+          "id": "_r_7_-note"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.OC-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.RR-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.PO-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-04"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-GV.SC-07"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.AM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.RA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-ID.IM-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AA-05"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.AT-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.DS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.DS-11"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.PS-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-PR.IR-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.CM-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-DE.AE-02"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.MA-01"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RS.AN-03"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_7_-RC.RP-01"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add evidence",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": null,
+          "id": "_r_8_-reviewer"
+        },
+        {
+          "tag": "SELECT",
+          "text": "accepted — evidence is adequateneeds more — hold at partialgap — mark weak regardless of evidencenot",
+          "type": null,
+          "id": "_r_8_-verdict"
+        },
+        {
+          "tag": "TEXTAREA",
+          "text": "Recovery communications are handled ad hoc by the operations director; accepted for this quarter whi",
+          "type": null,
+          "id": "_r_8_-rationale"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Record decision",
+          "type": "submit",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Clear decision",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "306090180",
+          "type": null,
+          "id": "_r_a_"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-002 Q2 access recertification report (finance apps) for PR.AA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-015 Top-10 supplier risk review for GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-007 Monthly patch compliance report for PR.PS-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-012 Hardware asset export (MDM) for ID.AM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-011 Regulatory obligations register for GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-004 Backup job configuration (nightly, encrypted) for PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-003 IdP MFA enforcement export for PR.AA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "EV-020 Encryption-at-rest configuration (object storage) for PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-02 sufficient → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AA-05 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.AM-01 sufficient → partial",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01 partial → weak",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03 weak → none",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import previous report JSON",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "file",
+          "id": ""
+        },
+        {
+          "tag": "SELECT",
+          "text": "AllGV — GovernID — IdentifyPR — ProtectDE — DetectRS — RespondRC — Recover",
+          "type": null,
+          "id": "_r_g_-fn"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Allsufficientpartialweaknonecontradictedrefutedaccepted-risknot-applicable",
+          "type": null,
+          "id": "_r_g_-status"
+        },
+        {
+          "tag": "SELECT",
+          "text": "Alllowmoderatehigh",
+          "type": null,
+          "id": "_r_g_-band"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "search",
+          "id": "_r_g_-query"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "checkbox",
+          "id": "_r_g_-closed"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Outcome↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Status↕",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Residual▼",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.CM-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-11",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "DE.AE-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.RA-05",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.PS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.RP-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.OC-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-04",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.SC-07",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.IR-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.PO-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "GV.RR-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "ID.IM-02",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.DS-01",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RS.AN-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "RC.CO-03",
+          "type": "button",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "text": "PR.AT-01",
+          "type": "button",
+          "id": ""
+        }
+      ],
+      "overflowing": [
+        {
+          "tag": "TH",
+          "class": ""
+        }
+      ]
+    },
+    "violations": [],
+    "incompleteChecks": [
+      {
+        "id": "color-contrast",
+        "impact": "serious"
+      }
+    ],
+    "path": "/#/RC.CO-03",
+    "colorScheme": "light",
+    "context": "axe-instrumentation (bypassCSP: true; application CSP unchanged on the server)",
+    "engine": "axe-source: axe.min.js",
+    "axeVersion": "4.13.0",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa"
+    ],
+    "horizontalOverflow": false
   }
 ]

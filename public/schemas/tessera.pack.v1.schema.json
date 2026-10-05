@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dln-tessera.vercel.app/schemas/tessera.pack.v1.schema.json",
+  "title": "Tessera evidence pack (tessera.pack/1)",
+  "description": "An evidence pack as exported by Tessera: a target profile, evidence artifacts mapped to the 25-subcategory educational subset of NIST CSF 2.0, reviewer decisions and an optional rule policy. Bounds mirror the import validator. Synthetic, educational data only; this is not a certification, attestation or audit format.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "profile", "evidence"],
+  "properties": {
+    "schema": { "const": "tessera.pack/1" },
+    "profile": {
+      "type": "object",
+      "description": "Target profile: who the evaluation is for, the evaluation date and per-outcome priorities.",
+      "additionalProperties": false,
+      "required": ["name", "asOf"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "asOf": { "$ref": "#/$defs/isoDate" },
+        "priorities": {
+          "type": "object",
+          "description": "Subcategory id → priority (3 = critical outcome for this organisation, 1 = low). Missing entries default to 2.",
+          "maxProperties": 25,
+          "propertyNames": { "$ref": "#/$defs/subcategoryId" },
+          "additionalProperties": { "$ref": "#/$defs/priority" }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "description": "Evidence artifacts. At most 500 per pack.",
+      "maxItems": 500,
+      "items": { "$ref": "#/$defs/evidence" }
+    },
+    "decisions": {
+      "type": "array",
+      "description": "Reviewer decisions, at most one per subcategory and at most 200 per pack.",
+      "maxItems": 200,
+      "items": { "$ref": "#/$defs/decision" }
+    },
+    "policy": { "$ref": "#/$defs/policy" }
+  },
+  "$defs": {
+    "isoDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "shortText": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "longText": { "type": "string", "maxLength": 2000 },
+    "person": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "subcategoryId": {
+      "type": "string",
+      "maxLength": 16,
+      "enum": [
+        "GV.OC-03", "GV.RM-02", "GV.RR-02", "GV.PO-01", "GV.SC-04", "GV.SC-07",
+        "ID.AM-01", "ID.AM-02", "ID.RA-01", "ID.RA-05", "ID.IM-02",
+        "PR.AA-01", "PR.AA-05", "PR.AT-01", "PR.DS-01", "PR.DS-11", "PR.PS-01", "PR.PS-02", "PR.IR-01",
+        "DE.CM-01", "DE.AE-02",
+        "RS.MA-01", "RS.AN-03",
+        "RC.RP-01", "RC.CO-03"
+      ]
+    },
+    "priority": { "type": "integer", "enum": [1, 2, 3] },
+    "evidenceType": {
+      "type": "string",
+      "enum": ["policy", "procedure", "configuration", "log-sample", "report", "attestation", "ticket"]
+    },
+    "verdict": { "type": "string", "enum": ["accepted", "gap", "needs-more", "not-applicable"] },
+    "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+    "exposureFactor": { "type": "number", "minimum": 0, "maximum": 1 },
+    "bandThreshold": { "type": "number", "minimum": 0.01, "maximum": 3 },
+    "evidence": {
+      "type": "object",
+      "description": "One artifact. Freshness is derived from collectedOn and validDays at the profile's as-of date.",
+      "additionalProperties": false,
+      "required": ["id", "title", "type", "subcategoryIds", "collectedOn", "validDays", "scope", "assertion", "source"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "title": { "$ref": "#/$defs/shortText" },
+        "type": { "$ref": "#/$defs/evidenceType" },
+        "subcategoryIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 25,
+          "items": { "$ref": "#/$defs/subcategoryId" }
+        },
+        "collectedOn": { "$ref": "#/$defs/isoDate" },
+        "validDays": { "type": "integer", "minimum": 1, "maximum": 3650 },
+        "scope": { "type": "string", "enum": ["full", "partial"] },
+        "assertion": { "type": "string", "enum": ["supports", "refutes"] },
+        "source": { "$ref": "#/$defs/shortText" },
+        "note": { "$ref": "#/$defs/longText" },
+        "collectedBy": { "$ref": "#/$defs/person" }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "description": "A reviewer decision for one subcategory. Decisions age: older than the policy's decisionValidDays (or dated after as-of) they are ignored with a warning.",
+      "additionalProperties": false,
+      "required": ["subcategoryId", "reviewer", "verdict", "rationale", "decidedOn"],
+      "properties": {
+        "subcategoryId": { "$ref": "#/$defs/subcategoryId" },
+        "reviewer": { "$ref": "#/$defs/person" },
+        "verdict": { "$ref": "#/$defs/verdict" },
+        "rationale": { "$ref": "#/$defs/longText" },
+        "decidedOn": { "$ref": "#/$defs/isoDate" }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "description": "Rule policy (tessera.policy/1): every threshold the engine uses. Absent from a pack means the default policy; every report embeds the policy it was computed with. Constraints not expressible here: fresh ≥ aging ≥ stale, full ≥ partial, moderate < high.",
+      "additionalProperties": false,
+      "required": [
+        "schema", "agingMultiplier", "freshnessWeights", "scopeWeights", "sufficientCoverage", "minDistinctTypes",
+        "exposure", "bands", "minOverrideRationale", "decisionValidDays", "separationOfDuties"
+      ],
+      "properties": {
+        "schema": { "const": "tessera.policy/1" },
+        "agingMultiplier": { "type": "number", "minimum": 1, "maximum": 5 },
+        "freshnessWeights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["fresh", "aging", "stale"],
+          "properties": {
+            "fresh": { "$ref": "#/$defs/weight" },
+            "aging": { "$ref": "#/$defs/weight" },
+            "stale": { "$ref": "#/$defs/weight" }
+          }
+        },
+        "scopeWeights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["full", "partial"],
+          "properties": {
+            "full": { "$ref": "#/$defs/weight" },
+            "partial": { "$ref": "#/$defs/weight" }
+          }
+        },
+        "sufficientCoverage": { "type": "number", "minimum": 0.1, "maximum": 10 },
+        "minDistinctTypes": { "type": "integer", "minimum": 1, "maximum": 7 },
+        "exposure": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["none", "refuted", "contradicted", "weak", "partial", "sufficient", "accepted-risk", "not-applicable"],
+          "properties": {
+            "none": { "$ref": "#/$defs/exposureFactor" },
+            "refuted": { "$ref": "#/$defs/exposureFactor" },
+            "contradicted": { "$ref": "#/$defs/exposureFactor" },
+            "weak": { "$ref": "#/$defs/exposureFactor" },
+            "partial": { "$ref": "#/$defs/exposureFactor" },
+            "sufficient": { "$ref": "#/$defs/exposureFactor" },
+            "accepted-risk": { "$ref": "#/$defs/exposureFactor" },
+            "not-applicable": { "const": 0 }
+          }
+        },
+        "bands": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["moderate", "high"],
+          "properties": {
+            "moderate": { "$ref": "#/$defs/bandThreshold" },
+            "high": { "$ref": "#/$defs/bandThreshold" }
+          }
+        },
+        "minOverrideRationale": { "type": "integer", "minimum": 0, "maximum": 2000 },
+        "decisionValidDays": { "type": "integer", "minimum": 1, "maximum": 3650 },
+        "separationOfDuties": { "type": "boolean" }
+      }
+    }
+  }
+}

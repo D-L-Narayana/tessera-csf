@@ -417,7 +417,7 @@ describe('bundled fixture', () => {
   });
 });
 
-describe('sixth-Fable review regressions — decision freshness and zero-evidence overrides', () => {
+describe('independent review regressions — decision freshness and zero-evidence overrides', () => {
   const dec = (verdict: Decision['verdict'], rationale: string, decidedOn: string): Decision => ({ subcategoryId: 'PR.AA-05', reviewer: 'rv', verdict, rationale, decidedOn });
   const long = 'Compensating manual control observed and documented in the walkthrough notes.';
 

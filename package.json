@@ -1,7 +1,7 @@
 {
   "name": "tessera",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Browser-local NIST CSF 2.0 evidence mapper: freshness, contradiction and residual-risk engine with traceable reviewer decisions.",
   "license": "MIT",
   "type": "module",
@@ -11,7 +11,9 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc -p tsconfig.json"
+    "typecheck": "tsc -p tsconfig.json",
+    "check:dist": "node qa/check-dist.mjs",
+    "qa:serve": "node qa/serve-dist.mjs --port 6120"
   },
   "dependencies": {
     "@fontsource/fraunces": "^5.2.0",
